@@ -16,12 +16,16 @@
 
     <!-- Create a Pulse Generator (current clamp) to apply a dimensionless (DL) current -->
     <pulseGeneratorDL id="i1" delay="100ms" duration="200ms" amplitude="1" />
+    
+    <simpleExponentialSynapse id="syn1" Gbase="0.0002" erev="0" tauDecay="5ms"/>
 
 
     <network id="net1">
         <population id="fnPop1" component="fn1" size="1" />
         <population id="fnPop2" component="fn1" size="1" />
-    
+        
+        <synapticConnection from="fnPop1[0]" to="fnPop2[0]" synapse="syn1" destination="synapses"/>
+    <!--     -->
         <explicitInput target="fnPop1[0]" input="i1" destination="synapses"/>
     
     </network>

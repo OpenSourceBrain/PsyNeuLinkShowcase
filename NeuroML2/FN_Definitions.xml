@@ -20,6 +20,8 @@
         <!-- <Exposure name="V" dimension="none"/> --> <!-- Already exposed from baseCellMembPotDL -->
         <Exposure name="W" dimension="none"/>
         <Exposure name="F" dimension="none"/>
+        
+        <EventPort name="spike" direction="out" description="Spike event"/>
 
         <Dynamics>
 
@@ -46,6 +48,44 @@
             </OnCondition>
             
             
+        </Dynamics>
+    </ComponentType>
+    
+    
+
+    <ComponentType name="simpleExponentialSynapse"
+                   extends="baseSynapseDL"
+                   description="Ohmic synapse model whose conductance rises instantaneously by (_gbase * _weight) on receiving an event, and which decays exponentially to zero with time course _tauDecay">
+
+        <Property name="weight" dimension="none" defaultValue="1"/>
+        
+        <Parameter name="tauDecay" dimension="time" description="Time course of decay"/>
+        <Parameter name="Gbase" dimension="none" description="Baseline conductance, generally the maximum conductance following a single spike"/>
+        <Parameter name="erev" dimension="none" description="Reversal potential of the synapse"/>
+        
+        
+        <Requirement name="V" dimension="none" description="The current may vary with the voltage exposed by the ComponentType on which this is placed"/>
+
+        <Exposure name="G" dimension="none"/>
+        
+        <EventPort name="in" direction="in"/>
+        
+        <Dynamics>
+
+            <StateVariable name="G" dimension="none" exposure="G"/>
+
+            <DerivedVariable name="I" exposure="I" dimension="none" value="G * (erev - V)" />
+
+            <TimeDerivative variable="G" value="-G / tauDecay" />
+
+            <OnStart>
+                <StateAssignment variable="G" value="0" />
+            </OnStart>
+
+            <OnEvent port="in">
+                <StateAssignment variable="G" value="G + (weight * Gbase)" />
+            </OnEvent>
+
         </Dynamics>
     </ComponentType>
 

@@ -1,2 +1,4 @@
 /PsyNeuLink/show_graph OUTPUT
 /NeuroML2/*.dat
+*_netpyne.py
+/NeuroML2/*.mod
