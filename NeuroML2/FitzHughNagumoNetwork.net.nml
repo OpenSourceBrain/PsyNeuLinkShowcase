@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="FN">
+
+
+    <!-- Create prototype cell-->
+    <fnCell id="fn1" a="0.7" b="0.8" phi="0.08" V0="-1.2" W0="-0.6"/>
+
+    <!-- Create a Pulse Generator (current clamp) to apply a dimensionless (DL) current -->
+    <pulseGeneratorDL id="i1" delay="100ms" duration="200ms" amplitude="1" />
+    
+    <!-- define a synapse model to use for the connection -->
+    <simpleExponentialSynapse id="syn1" Gbase=".1" erev="0" tauDecay="5ms"/>
+
+
+    <network id="net1">
+        <population id="fnPop1" component="fn1" size="1" />
+        <population id="fnPop2" component="fn1" size="1" />
+       
+        
+        <projection id="projection1" presynapticPopulation="fnPop1" postsynapticPopulation="fnPop2" synapse="syn1">
+            <connection id="0" preCellId="../fnPop1[0]" postCellId="../fnPop2[0]"/>
+        </projection>
+        
+        <explicitInput target="fnPop1[0]" input="i1" destination="synapses"/>
+    
+    </network>
+
+
+</neuroml>

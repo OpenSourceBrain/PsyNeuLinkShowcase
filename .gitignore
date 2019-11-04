@@ -2,3 +2,7 @@
 /NeuroML2/*.dat
 *_netpyne.py
 /NeuroML2/*.mod
+/NeuroML2/fn1_flat.cell.json
+/NeuroML2/i1.input.json
+/NeuroML2/net1.gv
+/NeuroML2/syn1_flat.synapse.json

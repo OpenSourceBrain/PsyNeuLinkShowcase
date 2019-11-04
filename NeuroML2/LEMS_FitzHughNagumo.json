@@ -1,0 +1,344 @@
+{
+  "dt" : "1.0E-5",
+  "seed" : "123456789",
+  "name" : "net1",
+  "synapses" : {
+    "syn1" : {
+      "synapse" : {
+        "name" : "syn1_flat",
+        "type" : "simpleExponentialSynapse_flat",
+        "dynamics" : {
+          "G" : "(0.0 - (G / tauDecay))"
+        },
+        "events" : [ {
+          "name" : "in",
+          "condition" : "EVENT_ON_PORT__in",
+          "effect" : {
+            "state" : {
+              "G" : "G + Gbase"
+            }
+          }
+        } ],
+        "parameters" : {
+          "tauDecay" : "0.005",
+          "Gbase" : "0.1",
+          "erev" : "0.0"
+        },
+        "state" : {
+          "G" : "0.0"
+        },
+        "state_functions" : {
+          "I" : "(G * (erev - V))"
+        }
+      }
+    }
+  },
+  "populations" : {
+    "fnPop1" : {
+      "size" : "1",
+      "component" : {
+        "name" : "fn1_flat",
+        "type" : "fnCell_flat",
+        "dynamics" : {
+          "V" : "(((F - W) + ISyn) / TS)",
+          "W" : "(phi * ((V + (a - (b * W))) / TS))"
+        },
+        "events" : [ {
+          "name" : "V__gt__0__and__spiking__lt__0_5",
+          "condition" : "V - (0 .and. spiking)",
+          "direction" : "+",
+          "effect" : {
+            "state" : {
+              "spiking" : "1"
+            }
+          }
+        }, {
+          "name" : "V__lt__0",
+          "condition" : "V - (0)",
+          "direction" : "-",
+          "effect" : {
+            "state" : {
+              "spiking" : "0"
+            }
+          }
+        } ],
+        "parameters" : {
+          "a" : "0.7",
+          "b" : "0.8",
+          "phi" : "0.08",
+          "V0" : "-1.2",
+          "W0" : "-0.6",
+          "TS" : "0.001",
+          "TS" : "0.001"
+        },
+        "state" : {
+          "V" : "V0",
+          "W" : "W0",
+          "spiking" : "0.0"
+        },
+        "state_functions" : {
+          "F" : "(V - ((V ^ 3.0) / 3.0))",
+          "ISyn" : "0"
+        },
+        "synapses_allowed" : [ "syn1" ]
+      }
+    },
+    "fnPop2" : {
+      "size" : "1",
+      "component" : {
+        "name" : "fn1_flat",
+        "type" : "fnCell_flat",
+        "dynamics" : {
+          "V" : "(((F - W) + ISyn) / TS)",
+          "W" : "(phi * ((V + (a - (b * W))) / TS))"
+        },
+        "events" : [ {
+          "name" : "V__gt__0__and__spiking__lt__0_5",
+          "condition" : "V - (0 .and. spiking)",
+          "direction" : "+",
+          "effect" : {
+            "state" : {
+              "spiking" : "1"
+            }
+          }
+        }, {
+          "name" : "V__lt__0",
+          "condition" : "V - (0)",
+          "direction" : "-",
+          "effect" : {
+            "state" : {
+              "spiking" : "0"
+            }
+          }
+        } ],
+        "parameters" : {
+          "a" : "0.7",
+          "b" : "0.8",
+          "phi" : "0.08",
+          "V0" : "-1.2",
+          "W0" : "-0.6",
+          "TS" : "0.001",
+          "TS" : "0.001"
+        },
+        "state" : {
+          "V" : "V0",
+          "W" : "W0",
+          "spiking" : "0.0"
+        },
+        "state_functions" : {
+          "F" : "(V - ((V ^ 3.0) / 3.0))",
+          "ISyn" : "0"
+        },
+        "synapses_allowed" : [ "syn1" ]
+      }
+    }
+  },
+  "inputs" : {
+    "i10" : {
+      "population" : "fnPop1",
+      "population_index" : "0",
+      "component" : {
+        "name" : "i1",
+        "type" : "pulseGeneratorDL",
+        "dynamics" : { },
+        "events" : [ {
+          "name" : "t__lt__delay",
+          "condition" : "t - (delay)",
+          "direction" : "-",
+          "effect" : {
+            "state" : {
+              "I" : "0"
+            }
+          }
+        }, {
+          "name" : "t__geq__delay__and__t__lt__duration_+_delay",
+          "condition" : "t - (delay .and. t)",
+          "direction" : "+",
+          "effect" : {
+            "state" : {
+              "I" : "weight * amplitude"
+            }
+          }
+        }, {
+          "name" : "t__geq__duration_+_delay",
+          "condition" : "t - (duration + delay)",
+          "direction" : "+",
+          "effect" : {
+            "state" : {
+              "I" : "0"
+            }
+          }
+        }, {
+          "name" : "in",
+          "condition" : "EVENT_ON_PORT__in",
+          "effect" : {
+            "state" : { }
+          }
+        } ],
+        "parameters" : {
+          "delay" : "0.1",
+          "duration" : "0.2",
+          "amplitude" : "1.0"
+        },
+        "state" : {
+          "I" : "0"
+        },
+        "state_functions" : { }
+      }
+    }
+  },
+  "projections" : {
+    "projection1" : {
+      "pre_population" : "fnPop1",
+      "post_population" : "fnPop2",
+      "synapse" : "syn1",
+      "connections" : [ {
+        "name" : "0",
+        "pre_cell_id" : "0",
+        "post_cell_id" : "0",
+        "weight" : "1",
+        "delay" : "0"
+      } ]
+    }
+  },
+  "t_end" : "0.4",
+  "t_start" : "0",
+  "dump_to_file" : "./fnPop1.dat",
+  "dump_to_file" : "./fnPop2.dat",
+  "spike_file" : [ ],
+  "output_file" : [ {
+    "name" : "of1",
+    "file_name" : "./fnPop1.dat",
+    "output_columns" : [ {
+      "name" : "t",
+      "variable" : "t"
+    }, {
+      "name" : "V",
+      "population" : "fnPop1",
+      "population_index" : "0",
+      "segment_name" : "soma",
+      "neuron_section_name" : "soma",
+      "neuron_fract_along" : "0.5",
+      "variable" : "V",
+      "quantity" : "fnPop1[0]/V"
+    }, {
+      "name" : "W",
+      "population" : "fnPop1",
+      "population_index" : "0",
+      "segment_name" : "soma",
+      "neuron_section_name" : "soma",
+      "neuron_fract_along" : "0.5",
+      "variable" : "W",
+      "quantity" : "fnPop1[0]/W"
+    } ]
+  }, {
+    "name" : "of2",
+    "file_name" : "./fnPop2.dat",
+    "output_columns" : [ {
+      "name" : "t",
+      "variable" : "t"
+    }, {
+      "name" : "V",
+      "population" : "fnPop2",
+      "population_index" : "0",
+      "segment_name" : "soma",
+      "neuron_section_name" : "soma",
+      "neuron_fract_along" : "0.5",
+      "variable" : "V",
+      "quantity" : "fnPop2[0]/V"
+    }, {
+      "name" : "W",
+      "population" : "fnPop2",
+      "population_index" : "0",
+      "segment_name" : "soma",
+      "neuron_section_name" : "soma",
+      "neuron_fract_along" : "0.5",
+      "variable" : "W",
+      "quantity" : "fnPop2[0]/W"
+    } ]
+  } ],
+  "display" : [ {
+    "name" : "d1",
+    "title" : "FN Cell Pop1",
+    "abscissa_axis" : {
+      "min" : "-40",
+      "max" : "440"
+    },
+    "ordinate_axis" : {
+      "min" : "-2.5",
+      "max" : "2.5"
+    },
+    "curves" : [ {
+      "name" : "V",
+      "abscissa" : "t",
+      "quantity" : "fnPop1[0]/V",
+      "ordinate" : "V",
+      "population" : "fnPop1",
+      "population_index" : "0",
+      "segment_id" : "0",
+      "colour" : "#000000"
+    }, {
+      "name" : "W",
+      "abscissa" : "t",
+      "quantity" : "fnPop1[0]/W",
+      "ordinate" : "W",
+      "population" : "fnPop1",
+      "population_index" : "0",
+      "segment_id" : "0",
+      "colour" : "#ff0000"
+    } ]
+  }, {
+    "name" : "d2",
+    "title" : "FN Cell Pop2",
+    "abscissa_axis" : {
+      "min" : "-40",
+      "max" : "440"
+    },
+    "ordinate_axis" : {
+      "min" : "-2.5",
+      "max" : "2.5"
+    },
+    "curves" : [ {
+      "name" : "V",
+      "abscissa" : "t",
+      "quantity" : "fnPop2[0]/V",
+      "ordinate" : "V",
+      "population" : "fnPop2",
+      "population_index" : "0",
+      "segment_id" : "0",
+      "colour" : "#000000"
+    }, {
+      "name" : "W",
+      "abscissa" : "t",
+      "quantity" : "fnPop2[0]/W",
+      "ordinate" : "W",
+      "population" : "fnPop2",
+      "population_index" : "0",
+      "segment_id" : "0",
+      "colour" : "#ff0000"
+    } ]
+  }, {
+    "name" : "d3",
+    "title" : "Synapse properties",
+    "abscissa_axis" : {
+      "min" : "-40",
+      "max" : "440"
+    },
+    "ordinate_axis" : {
+      "min" : "-2.5",
+      "max" : "2.5"
+    },
+    "curves" : [ {
+      "name" : "G",
+      "abscissa" : "t",
+      "quantity" : "fnPop2[0]/syn1/G",
+      "ordinate" : "syn1_G",
+      "population" : "fnPop2",
+      "population_index" : "0",
+      "segment_id" : "0",
+      "colour" : "#000000"
+    } ]
+  } ],
+  "comment" : "    This DLems file has been generated by org.neuroml.export (see https://github.com/NeuroML/org.neuroml.export)\n         org.neuroml.export  v1.5.5\n         org.neuroml.model   v1.5.5\n         jLEMS               v0.9.9.2",
+  "export_library_version" : "1.5.5"
+}
