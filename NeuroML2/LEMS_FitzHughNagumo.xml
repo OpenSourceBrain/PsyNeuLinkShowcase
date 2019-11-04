@@ -1,37 +1,56 @@
 <Lems>
 
-<!-- Specify which component to run -->
-<Target component="sim1"/>
+    <!-- Specify which component to run -->
+    <Target component="sim1"/>
 
-<!-- Include core NeuroML2 ComponentType definitions -->
-<Include file="Cells.xml"/>
-<Include file="Networks.xml"/>
-<Include file="Simulation.xml"/>
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
 
-<Include file="FN_Definitions.xml"/>
+    <!-- Include definition of FN model in LEMS -->
+    <Include file="FN_Definitions.xml"/>
 
-<fnCell id="fn1" a="0.7" b="0.08" I="1.0" phi="0.08" V0="0.0" W0="0.0"/>
+    <!-- Create prototype cell-->
+    <fnCell id="fn1" a="0.7" b="0.8" phi="0.08" V0="-1.2" W0="-0.6"/>
 
-<network id="net1">
-    <population id="fnPop1" component="fn1" size="1" />
-</network>
+    <!-- Create a Pulse Generator (current clamp) to apply a dimensionless (DL) current -->
+    <pulseGeneratorDL id="i1" delay="100ms" duration="200ms" amplitude="1" />
 
 
-<Simulation id="sim1" length="400ms" step="0.01ms" target="net1">
-
-    <Display id="d1" title="Dynamical variable timeseries - V and W"
-        timeScale="1ms" xmin="-40" xmax="440" ymin="-2.5" ymax="2.5">
-        <Line id ="V" quantity="fnPop1[0]/V" scale="1"
-            color="#000000" timeScale="1ms"/>
-        <Line id ="W" quantity="fnPop1[0]/W" scale="1"
-            color="#ff0000" timeScale="1ms"/>
-    </Display>
-
-    <OutputFile id="of0" fileName="./fhn.dat">
-      <OutputColumn id="V" quantity="fnPop1[0]/V"/>
-      <OutputColumn id="W" quantity="fnPop1[0]/W"/>
-    </OutputFile>
+    <network id="net1">
+        <population id="fnPop1" component="fn1" size="1" />
+        <population id="fnPop2" component="fn1" size="1" />
     
-</Simulation>
+        <explicitInput target="fnPop1[0]" input="i1" destination="synapses"/>
+    
+    </network>
+
+
+    <Simulation id="sim1" length="400ms" step="0.01ms" target="net1">
+
+        <Display id="d1" title="FN Cell Pop1"
+                 timeScale="1ms" xmin="-40" xmax="440" ymin="-2.5" ymax="2.5">
+            <Line id ="V" quantity="fnPop1[0]/V" scale="1" color="#000000" timeScale="1ms"/>
+            <Line id ="W" quantity="fnPop1[0]/W" scale="1" color="#ff0000" timeScale="1ms"/>
+        </Display>
+    
+    
+        <Display id="d2" title="FN Cell Pop1"
+                 timeScale="1ms" xmin="-40" xmax="440" ymin="-2.5" ymax="2.5">
+            <Line id ="V" quantity="fnPop2[0]/V" scale="1" color="#000000" timeScale="1ms"/>
+            <Line id ="W" quantity="fnPop2[0]/W" scale="1" color="#ff0000" timeScale="1ms"/>
+        </Display>
+
+        <OutputFile id="of1" fileName="./fnPop1.dat">
+            <OutputColumn id="V" quantity="fnPop1[0]/V"/>
+            <OutputColumn id="W" quantity="fnPop1[0]/W"/>
+        </OutputFile>
+        <OutputFile id="of2" fileName="./fnPop2.dat">
+            <OutputColumn id="V" quantity="fnPop2[0]/V"/>
+            <OutputColumn id="W" quantity="fnPop2[0]/W"/>
+        </OutputFile>
+    
+    </Simulation>
 
 </Lems>
