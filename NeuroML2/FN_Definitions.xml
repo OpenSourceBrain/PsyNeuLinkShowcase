@@ -29,6 +29,7 @@
                            description="V plays the role of the membrane potential"/>
             <StateVariable name="W" dimension="none" exposure="W"
                            description="W plays the role of a recovery variable"/>
+            <StateVariable name="spiking" dimension="none"/>
 
             <!-- F must be a cubic polynomial in V -->
             <DerivedVariable name="F" dimension="none" exposure="F" value="V - (V^3 / 3)"/>
@@ -41,10 +42,16 @@
             <OnStart>
                 <StateAssignment variable="V" value="V0"/>
                 <StateAssignment variable="W" value="W0"/>
+                <StateAssignment variable="spiking" value="0"/>
             </OnStart>
 
-            <OnCondition test="V .gt. 0">
+            <OnCondition test="V .gt. 0 .and. spiking .lt. 0.5">
+                <StateAssignment variable="spiking" value="1"/>
                 <EventOut port="spike"/>
+            </OnCondition>
+            
+            <OnCondition test="V .lt. 0">
+                <StateAssignment variable="spiking" value="0"/>
             </OnCondition>
             
             

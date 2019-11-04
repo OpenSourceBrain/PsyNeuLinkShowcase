@@ -8,7 +8,8 @@
     <Include file="Networks.xml"/>
     <Include file="Simulation.xml"/>
 
-    <!-- Include definition of FN model in LEMS -->
+    
+    <!-- Include a new definition of FN model in LEMS -->
     <Include file="FN_Definitions.xml"/>
 
     <!-- Create prototype cell-->
@@ -17,7 +18,8 @@
     <!-- Create a Pulse Generator (current clamp) to apply a dimensionless (DL) current -->
     <pulseGeneratorDL id="i1" delay="100ms" duration="200ms" amplitude="1" />
     
-    <simpleExponentialSynapse id="syn1" Gbase="0.0002" erev="0" tauDecay="5ms"/>
+    <!-- define a synapse model to use for the connection -->
+    <simpleExponentialSynapse id="syn1" Gbase=".1" erev="0" tauDecay="5ms"/>
 
 
     <network id="net1">
@@ -25,11 +27,14 @@
         <population id="fnPop2" component="fn1" size="1" />
         
         <synapticConnection from="fnPop1[0]" to="fnPop2[0]" synapse="syn1" destination="synapses"/>
-    <!--     -->
+        
         <explicitInput target="fnPop1[0]" input="i1" destination="synapses"/>
     
     </network>
 
+
+
+    <!--  Everything below here is just to run a simulation and display plots & save traces -->
 
     <Simulation id="sim1" length="400ms" step="0.01ms" target="net1">
 
@@ -40,10 +45,15 @@
         </Display>
     
     
-        <Display id="d2" title="FN Cell Pop1"
+        <Display id="d2" title="FN Cell Pop2"
                  timeScale="1ms" xmin="-40" xmax="440" ymin="-2.5" ymax="2.5">
             <Line id ="V" quantity="fnPop2[0]/V" scale="1" color="#000000" timeScale="1ms"/>
             <Line id ="W" quantity="fnPop2[0]/W" scale="1" color="#ff0000" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="d3" title="Synapse properties"
+                 timeScale="1ms" xmin="-40" xmax="440" ymin="-2.5" ymax="2.5">
+            <Line id ="G" quantity="fnPop2[0]/syn1/G" scale="1" color="#000000" timeScale="1ms"/>
         </Display>
 
         <OutputFile id="of1" fileName="./fnPop1.dat">
