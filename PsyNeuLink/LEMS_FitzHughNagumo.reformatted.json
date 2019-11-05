@@ -1,0 +1,83 @@
+{
+  "graphs" : [
+    {
+      "name" : "net1",
+      "nodes" : {
+        "syn1" : {
+          "name" : "syn1_flat",
+          "type" : {
+            "NeuroML": "simpleExponentialSynapse_flat",
+            "generic": "exponential"
+          },
+          "functions": [
+            "(G * (erev - V))"
+          ],
+          "parameters" : {
+            "tauDecay" : "0.005",
+            "Gbase" : "0.1",
+            "erev" : "0.0",
+            "G" : "0.0"
+          },
+        },
+        "fnPop1" : {
+          "name" : "fn1_flat",
+          "type" : {
+            "NeuroML": "fnCell_flat",
+            "generic": "FitzHughNagumo"
+          },
+          "parameters" : {
+            "a" : "0.7",
+            "b" : "0.8",
+            "phi" : "0.08",
+            "V0" : "-1.2",
+            "W0" : "-0.6",
+            "TS" : "0.001",
+            "TS" : "0.001",
+            "size" : "1",
+            "synapses_allowed" : [ "syn1" ]
+          },
+          "functions" : [
+            { "F" : "(V - ((V ^ 3.0) / 3.0))" },
+            { "ISyn" : "0" }
+          ]
+        },
+        "fnPop2" : {
+          "name" : "fn1_flat",
+          "type" : {
+            "NeuroML": "fnCell_flat",
+            "generic": "FitzHughNagumo"
+          },
+          "parameters" : {
+            "a" : "0.7",
+            "b" : "0.8",
+            "phi" : "0.08",
+            "V0" : "-1.2",
+            "W0" : "-0.6",
+            "TS" : "0.001",
+            "TS" : "0.001",
+            "size" : "1",
+            "synapses_allowed" : [ "syn1" ]
+          },
+          "functions" : [
+            { "F" : "(V - ((V ^ 3.0) / 3.0))" },
+            { "ISyn" : "0" }
+          ]
+        }
+      },
+      "projections" : {
+        "projection1" : {
+          "sender" : "fnPop1",
+          "receiver": "syn1",
+          "functions" : [],
+          "parameters" : {}
+        },
+        "projection2" : {
+          "sender" : "syn1",
+          "receiver" : "fnPop2",
+          "functions" : [],
+          "parameters" : {}
+        }
+      },
+    }
+  ]
+}

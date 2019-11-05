@@ -1,0 +1,310 @@
+{
+    "graphs": [
+        {
+            "name": "composition",
+            "nodes": {
+                "syn1": {
+                    "parameters": {},
+                    "type": {
+                        "PNL": "TransferMechanism",
+                        "generic": null
+                    },
+                    "name": "syn1",
+                    "functions": [
+                        {
+                            "name": "syn1_flat",
+                            "type": {
+                                "PNL": "Exponential",
+                                "generic": null
+                            },
+                            "args": {
+                                "execute_until_finished": true,
+                                "multiplicative_param": 1.0,
+                                "bounds": null,
+                                "is_finished_flag": true,
+                                "execution_count": 0,
+                                "max_executions_before_finished": 1000,
+                                "scale": 1.0,
+                                "bias": 0.0,
+                                "value": [
+                                    0
+                                ],
+                                "num_executions_before_finished": 0,
+                                "rate": 1.0,
+                                "variable": [
+                                    0
+                                ],
+                                "additive_param": 0.0,
+                                "offset": 0.0,
+                                "has_initializers": false
+                            }
+                        }
+                    ]
+                },
+                "fnPop1": {
+                    "parameters": {},
+                    "type": {
+                        "PNL": "IntegratorMechanism",
+                        "generic": null
+                    },
+                    "name": "fnPop1",
+                    "functions": [
+                        {
+                            "name": "fn1_flat",
+                            "type": {
+                                "PNL": "FitzHughNagumoIntegrator",
+                                "generic": null
+                            },
+                            "args": {
+                                "previous_v": [
+                                    1.0
+                                ],
+                                "execute_until_finished": true,
+                                "noise": 0.0,
+                                "max_executions_before_finished": 1000,
+                                "f_v": 1.0,
+                                "num_executions_before_finished": 0,
+                                "rate": 1.0,
+                                "initializer": [
+                                    0
+                                ],
+                                "d_v": 0.0,
+                                "c_v": 1.0,
+                                "previous_w": [
+                                    1.0
+                                ],
+                                "previous_time": 0.0,
+                                "execution_count": 0,
+                                "a_v": "0.7",
+                                "c_w": 0.7,
+                                "b_v": "0.8",
+                                "mode": 1.0,
+                                "initial_w": "-0.6",
+                                "b_w": "0.8",
+                                "initial_v": "-1.2",
+                                "is_finished_flag": true,
+                                "previous_value": [
+                                    0
+                                ],
+                                "uncorrelated_activity": 0.0,
+                                "integration_method": "RK4",
+                                "threshold": -1.0,
+                                "time_step_size": "0.001",
+                                "variable": [
+                                    1.0
+                                ],
+                                "a_w": "0.7",
+                                "e_v": -1.0,
+                                "time_constant_v": 1.0,
+                                "value": [
+                                    0
+                                ],
+                                "t_0": 0.0,
+                                "time_constant_w": 12.5,
+                                "has_initializers": false
+                            }
+                        }
+                    ]
+                },
+                "fnPop2": {
+                    "parameters": {},
+                    "type": {
+                        "PNL": "IntegratorMechanism",
+                        "generic": null
+                    },
+                    "name": "fnPop2",
+                    "functions": [
+                        {
+                            "name": "fn1_flat",
+                            "type": {
+                                "PNL": "FitzHughNagumoIntegrator",
+                                "generic": null
+                            },
+                            "args": {
+                                "previous_v": [
+                                    1.0
+                                ],
+                                "execute_until_finished": true,
+                                "noise": 0.0,
+                                "max_executions_before_finished": 1000,
+                                "f_v": 1.0,
+                                "num_executions_before_finished": 0,
+                                "rate": 1.0,
+                                "initializer": [
+                                    0
+                                ],
+                                "d_v": 0.0,
+                                "c_v": 1.0,
+                                "previous_w": [
+                                    1.0
+                                ],
+                                "previous_time": 0.0,
+                                "execution_count": 0,
+                                "a_v": "0.7",
+                                "c_w": 0.7,
+                                "b_v": "0.8",
+                                "mode": 1.0,
+                                "initial_w": "-0.6",
+                                "b_w": "0.8",
+                                "initial_v": "-1.2",
+                                "is_finished_flag": true,
+                                "previous_value": [
+                                    0
+                                ],
+                                "uncorrelated_activity": 0.0,
+                                "integration_method": "RK4",
+                                "threshold": -1.0,
+                                "time_step_size": "0.001",
+                                "variable": [
+                                    1.0
+                                ],
+                                "a_w": "0.7",
+                                "e_v": -1.0,
+                                "time_constant_v": 1.0,
+                                "value": [
+                                    0
+                                ],
+                                "t_0": 0.0,
+                                "time_constant_w": 12.5,
+                                "has_initializers": false
+                            }
+                        }
+                    ]
+                }
+            },
+            "edges": {
+                "MappingProjection from fnPop1[OutputPort-0] to syn1[InputPort-0]": {
+                    "name": "MappingProjection from fnPop1[OutputPort-0] to syn1[InputPort-0]",
+                    "parameters": {
+                        "exponent": null,
+                        "execute_until_finished": true,
+                        "is_finished_flag": true,
+                        "matrix": [
+                            [
+                                1.0
+                            ]
+                        ],
+                        "max_executions_before_finished": 1000,
+                        "num_executions_before_finished": 0,
+                        "weight": null,
+                        "PNL": {
+                            "execution_count": 0,
+                            "variable": [
+                                0.0
+                            ],
+                            "has_initializers": false
+                        }
+                    },
+                    "functions": [
+                        {
+                            "name": "LinearMatrix Function-0",
+                            "args": {
+                                "execute_until_finished": true,
+                                "bounds": null,
+                                "is_finished_flag": true,
+                                "matrix": {
+                                    "source": "MappingProjection from fnPop1[OutputPort-0] to syn1[InputPort-0].input_ports.matrix",
+                                    "value": [
+                                        [
+                                            1.0
+                                        ]
+                                    ],
+                                    "type": "numpy.array"
+                                },
+                                "max_executions_before_finished": 1000,
+                                "num_executions_before_finished": 0,
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "variable": [
+                                        0.0
+                                    ],
+                                    "has_initializers": false
+                                }
+                            },
+                            "type": {
+                                "generic": null,
+                                "PNL": "LinearMatrix"
+                            }
+                        }
+                    ],
+                    "type": {
+                        "generic": null,
+                        "PNL": "MappingProjection"
+                    },
+                    "sender_port": "OutputPort-0",
+                    "receiver_port": "InputPort-0",
+                    "sender": "fnPop1",
+                    "receiver": "syn1"
+                },
+                "MappingProjection from syn1[OutputPort-0] to fnPop2[InputPort-0]": {
+                    "name": "MappingProjection from syn1[OutputPort-0] to fnPop2[InputPort-0]",
+                    "parameters": {
+                        "exponent": null,
+                        "execute_until_finished": true,
+                        "is_finished_flag": true,
+                        "matrix": [
+                            [
+                                1.0
+                            ]
+                        ],
+                        "max_executions_before_finished": 1000,
+                        "num_executions_before_finished": 0,
+                        "weight": null,
+                        "PNL": {
+                            "execution_count": 0,
+                            "variable": [
+                                0.0
+                            ],
+                            "has_initializers": false
+                        }
+                    },
+                    "functions": [
+                        {
+                            "name": "LinearMatrix Function-1",
+                            "args": {
+                                "execute_until_finished": true,
+                                "bounds": null,
+                                "is_finished_flag": true,
+                                "matrix": {
+                                    "source": "MappingProjection from syn1[OutputPort-0] to fnPop2[InputPort-0].input_ports.matrix",
+                                    "value": [
+                                        [
+                                            1.0
+                                        ]
+                                    ],
+                                    "type": "numpy.array"
+                                },
+                                "max_executions_before_finished": 1000,
+                                "num_executions_before_finished": 0,
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "variable": [
+                                        0.0
+                                    ],
+                                    "has_initializers": false
+                                }
+                            },
+                            "type": {
+                                "generic": null,
+                                "PNL": "LinearMatrix"
+                            }
+                        }
+                    ],
+                    "type": {
+                        "generic": null,
+                        "PNL": "MappingProjection"
+                    },
+                    "sender_port": "OutputPort-0",
+                    "receiver_port": "InputPort-0",
+                    "sender": "syn1",
+                    "receiver": "fnPop2"
+                }
+            },
+            "parameters": {},
+            "type": {
+                "PNL": "Composition",
+                "generic": "graph"
+            }
+        }
+    ]
+}
