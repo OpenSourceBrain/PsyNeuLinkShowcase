@@ -6,3 +6,5 @@
 /NeuroML2/i1.input.json
 /NeuroML2/net1.gv
 /NeuroML2/syn1_flat.synapse.json
+/NeuroML2/test_cog_model/LEMS_SimWC.xml
+/NeuroML2/test_cog_model/*.gv*

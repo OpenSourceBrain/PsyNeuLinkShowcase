@@ -1,0 +1,339 @@
+{
+    "BioCog": {
+        "version": "NeuroMLlite v0.1.9", 
+        "parameters": {
+            "wie": -8, 
+            "input_duration": "60ms", 
+            "wee": 10, 
+            "wei": 12, 
+            "wii": -3, 
+            "input_delay": "20ms", 
+            "exc_input": "0nA", 
+            "inh_input": "0nA"
+        }, 
+        "notes": "A simple network", 
+        "cells": [
+            {
+                "Exc": {
+                    "lems_source_file": "../WC_Parameters.xml"
+                }
+            }, 
+            {
+                "Inh": {
+                    "lems_source_file": "../RateBased.xml"
+                }
+            }
+        ], 
+        "synapses": [
+            {
+                "rsExc": {
+                    "lems_source_file": "WC_Parameters.xml"
+                }
+            }, 
+            {
+                "rsInh": {
+                    "lems_source_file": "RateBased.xml"
+                }
+            }
+        ], 
+        "regions": [
+            {
+                "PosteriorCortex": {
+                    "x": 0.0, 
+                    "y": 0.0, 
+                    "z": 0.0, 
+                    "width": 1000.0, 
+                    "height": 100.0, 
+                    "depth": 1000.0
+                }
+            }, 
+            {
+                "FrontalCortex": {
+                    "x": 0.0, 
+                    "y": 0.0, 
+                    "z": 0.0, 
+                    "width": 1000.0, 
+                    "height": 100.0, 
+                    "depth": 1000.0
+                }
+            }, 
+            {
+                "Striatum": {
+                    "x": 0.0, 
+                    "y": 100.0, 
+                    "z": 0.0, 
+                    "width": 1000.0, 
+                    "height": 100.0, 
+                    "depth": 1000.0
+                }
+            }
+        ], 
+        "populations": [
+            {
+                "PC": {
+                    "size": 1, 
+                    "component": "Exc", 
+                    "properties": {
+                        "color": ".92 .92 .92", 
+                        "radius": 10
+                    }, 
+                    "relative_layout": {
+                        "region": "PosteriorCortex", 
+                        "x": -20.0, 
+                        "y": 0.0, 
+                        "z": 0.0
+                    }
+                }
+            }, 
+            {
+                "FC": {
+                    "size": 1, 
+                    "component": "Exc", 
+                    "properties": {
+                        "color": ".92 .92 .92", 
+                        "radius": 10
+                    }, 
+                    "relative_layout": {
+                        "region": "FrontalCortex", 
+                        "x": -20.0, 
+                        "y": 0.0, 
+                        "z": 0.0
+                    }
+                }
+            }, 
+            {
+                "Go": {
+                    "size": 1, 
+                    "component": "Inh", 
+                    "properties": {
+                        "color": ".92 .92 .92", 
+                        "radius": 10
+                    }, 
+                    "relative_layout": {
+                        "region": "Striatum", 
+                        "x": 20.0, 
+                        "y": 0.0, 
+                        "z": 0.0
+                    }
+                }
+            }, 
+            {
+                "NoGo": {
+                    "size": 1, 
+                    "component": "Inh", 
+                    "properties": {
+                        "color": "1 1 0.4", 
+                        "radius": 10
+                    }, 
+                    "relative_layout": {
+                        "region": "Striatum", 
+                        "x": 20.0, 
+                        "y": 0.0, 
+                        "z": 0.0
+                    }
+                }
+            }, 
+            {
+                "Thalamus": {
+                    "size": 1, 
+                    "component": "Exc", 
+                    "properties": {
+                        "color": ".92 .92 .92", 
+                        "radius": 10
+                    }
+                }
+            }, 
+            {
+                "GPe": {
+                    "size": 1, 
+                    "component": "Exc", 
+                    "properties": {
+                        "color": ".92 .92 .92", 
+                        "radius": 10
+                    }
+                }
+            }, 
+            {
+                "SNr": {
+                    "size": 1, 
+                    "component": "Exc", 
+                    "properties": {
+                        "color": "1 1 0.4", 
+                        "radius": 10
+                    }
+                }
+            }
+        ], 
+        "projections": [
+            {
+                "proj_PC_FC": {
+                    "presynaptic": "PC", 
+                    "postsynaptic": "FC", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_PC_Go": {
+                    "presynaptic": "PC", 
+                    "postsynaptic": "Go", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_PC_NoGo": {
+                    "presynaptic": "PC", 
+                    "postsynaptic": "NoGo", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_FC_PC": {
+                    "presynaptic": "FC", 
+                    "postsynaptic": "PC", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_FC_Go": {
+                    "presynaptic": "FC", 
+                    "postsynaptic": "Go", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_FC_NoGo": {
+                    "presynaptic": "FC", 
+                    "postsynaptic": "NoGo", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_Thalamus_NoGo": {
+                    "presynaptic": "Thalamus", 
+                    "postsynaptic": "NoGo", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_Thalamus_FC": {
+                    "presynaptic": "Thalamus", 
+                    "postsynaptic": "FC", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_FC_Thalamus": {
+                    "presynaptic": "FC", 
+                    "postsynaptic": "Thalamus", 
+                    "synapse": "rsExc", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": 10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_NoGo_GPe": {
+                    "presynaptic": "NoGo", 
+                    "postsynaptic": "GPe", 
+                    "synapse": "rsInh", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": -10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_GPe_SNr": {
+                    "presynaptic": "GPe", 
+                    "postsynaptic": "SNr", 
+                    "synapse": "rsInh", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": -10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_Go_SNr": {
+                    "presynaptic": "Go", 
+                    "postsynaptic": "SNr", 
+                    "synapse": "rsInh", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": -10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }, 
+            {
+                "proj_SNr_Thalamus": {
+                    "presynaptic": "SNr", 
+                    "postsynaptic": "Thalamus", 
+                    "synapse": "rsInh", 
+                    "type": "continuousProjection", 
+                    "delay": 0, 
+                    "weight": -10, 
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            }
+        ]
+    }
+}
