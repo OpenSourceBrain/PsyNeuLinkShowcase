@@ -1,0 +1,91 @@
+<Lems xmlns="http://www.neuroml.org/lems/0.7.4"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.neuroml.org/lems/0.7.4 https://raw.githubusercontent.com/LEMS/LEMS/master/Schemas/LEMS/LEMS_v0.7.4.xsd" >
+
+    <ComponentType  name="mccpCell"
+                    extends="baseCellMembPotDL"
+                    description="...">
+       
+    
+        <Parameter name="threshold" dimension="none"/>
+        
+        <Attachments name="synapses" type="basePointCurrentDL"/>
+        
+        <Exposure name="R" dimension="none"/>
+        <Exposure name="ISyn" dimension="none"/>
+
+        
+
+        <Dynamics>
+
+
+            <DerivedVariable name="ISyn" dimension="none" exposure="ISyn" select="synapses[*]/I" reduce="add" />
+        
+            <!-- Set V to zero for now... -->
+            <DerivedVariable name="V" dimension="none" exposure="V" value="0"/>
+            
+            <DerivedVariable name="R" dimension="none" exposure="R" value="H(ISyn-threshold)"/>
+        
+            <!-- On condition is not need on the model but NeuroML requires its definition -->
+            <OnCondition test="R .lt. 0">
+                <EventOut port="spike"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType>
+    
+    
+
+    <ComponentType name="baseGradedSynapseDL"
+                   extends="baseSynapseDL"
+                   description="Base type for dimensionless graded synapses">
+    </ComponentType>
+
+
+    <ComponentType name="silentRateSynapseDL"
+                   extends="baseGradedSynapseDL"
+                   description="Dummy synapse which emits no current. Used as presynaptic endpoint for analog synaptic connection.">
+
+        <Property name="weight" dimension="none" defaultValue="1"/> <!-- Not used...-->
+
+        <Exposure name="I" dimension="none"/>
+
+        <InstanceRequirement name="peer" type="baseGradedSynapse"/>
+
+        <Dynamics>
+            <DerivedVariable name="I" exposure="I"  value="0"/>
+        </Dynamics>
+
+    </ComponentType>
+
+
+    <ComponentType name="rateSynapseDL"
+                   extends="baseGradedSynapseDL"
+                   description="...">
+
+        <Property name="weight" dimension="none" defaultValue="1"/>
+
+        <Constant name="SEC" dimension="time" value="1s"/>
+
+        <Exposure name="I" dimension="none"/>
+
+        <Requirement name="R" dimension="none"/>
+
+        <InstanceRequirement name="peer" type="rateSynapseDL"/>
+
+        <Dynamics>
+            <DerivedVariable name="rpeer" dimension="none" select="peer/R"/>
+            <DerivedVariable name="I" exposure="I"  value="weight * SEC * rpeer"/>
+        </Dynamics>
+        
+    </ComponentType>
+    
+    
+    <mccpCell id="mccp0" threshold="1"/> 
+        
+    <rateSynapseDL id="rsDL" />
+    <silentRateSynapseDL id="silentDL"/>
+    <silentRateSynapseDL id="silentSyn_proj0"/>
+    
+</Lems>

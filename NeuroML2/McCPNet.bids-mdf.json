@@ -1,0 +1,92 @@
+{
+    "graphs": [
+        {
+            "parameters": {}, 
+            "notes": "Example of simplified McCP Net", 
+            "nodes": {
+                "McCPpop1_0": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop1_0", 
+                    "parameters": {}
+                }, 
+                "McCPpop1_1": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop1_1", 
+                    "parameters": {}
+                }, 
+                "McCPpop1_2": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop1_2", 
+                    "parameters": {}
+                }, 
+                "McCPpop1_3": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop1_3", 
+                    "parameters": {}
+                }, 
+                "McCPpop1_4": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop1_4", 
+                    "parameters": {}
+                }, 
+                "McCPpop0_1": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop0_1", 
+                    "parameters": {}
+                }, 
+                "McCPpop0_0": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop0_0", 
+                    "parameters": {}
+                }, 
+                "McCPpop0_3": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop0_3", 
+                    "parameters": {}
+                }, 
+                "McCPpop0_2": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop0_2", 
+                    "parameters": {}
+                }, 
+                "McCPpop0_4": {
+                    "functions": {}, 
+                    "type": {
+                        "NeuroML": "mccp0"
+                    }, 
+                    "name": "McCPpop0_4", 
+                    "parameters": {}
+                }
+            }, 
+            "name": "McCPNet", 
+            "edges": {}
+        }
+    ]
+}
