@@ -8,3 +8,6 @@
 /NeuroML2/syn1_flat.synapse.json
 /NeuroML2/test_cog_model/LEMS_SimWC.xml
 /NeuroML2/test_cog_model/*.gv*
+/NeuroML2/LEMS_SimMcCPNet.xml
+/NeuroML2/*.gv*
+/NeuroML2/report*.txt

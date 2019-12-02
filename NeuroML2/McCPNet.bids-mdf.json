@@ -28,22 +28,6 @@
                     "name": "McCPpop1_2", 
                     "parameters": {}
                 }, 
-                "McCPpop1_3": {
-                    "functions": {}, 
-                    "type": {
-                        "NeuroML": "mccp0"
-                    }, 
-                    "name": "McCPpop1_3", 
-                    "parameters": {}
-                }, 
-                "McCPpop1_4": {
-                    "functions": {}, 
-                    "type": {
-                        "NeuroML": "mccp0"
-                    }, 
-                    "name": "McCPpop1_4", 
-                    "parameters": {}
-                }, 
                 "McCPpop0_1": {
                     "functions": {}, 
                     "type": {
@@ -60,14 +44,6 @@
                     "name": "McCPpop0_0", 
                     "parameters": {}
                 }, 
-                "McCPpop0_3": {
-                    "functions": {}, 
-                    "type": {
-                        "NeuroML": "mccp0"
-                    }, 
-                    "name": "McCPpop0_3", 
-                    "parameters": {}
-                }, 
                 "McCPpop0_2": {
                     "functions": {}, 
                     "type": {
@@ -75,18 +51,107 @@
                     }, 
                     "name": "McCPpop0_2", 
                     "parameters": {}
-                }, 
-                "McCPpop0_4": {
-                    "functions": {}, 
-                    "type": {
-                        "NeuroML": "mccp0"
-                    }, 
-                    "name": "McCPpop0_4", 
-                    "parameters": {}
                 }
             }, 
             "name": "McCPNet", 
-            "edges": {}
+            "edges": {
+                "Edge McCPpop0_2 to McCPpop1_2": {
+                    "functions": {}, 
+                    "name": "Edge McCPpop0_2 to McCPpop1_2", 
+                    "receiver_port": "InputPort", 
+                    "sender_port": "OutputPort", 
+                    "receiver": "McCPpop1_2", 
+                    "parameters": {}, 
+                    "type": {
+                        "NeuroML": "rsDL"
+                    }, 
+                    "sender": "McCPpop0_2"
+                }, 
+                "Edge McCPpop0_2 to McCPpop1_0": {
+                    "functions": {}, 
+                    "name": "Edge McCPpop0_2 to McCPpop1_0", 
+                    "receiver_port": "InputPort", 
+                    "sender_port": "OutputPort", 
+                    "receiver": "McCPpop1_0", 
+                    "parameters": {}, 
+                    "type": {
+                        "NeuroML": "rsDL"
+                    }, 
+                    "sender": "McCPpop0_2"
+                }, 
+                "Edge McCPpop0_2 to McCPpop1_1": {
+                    "functions": {}, 
+                    "name": "Edge McCPpop0_2 to McCPpop1_1", 
+                    "receiver_port": "InputPort", 
+                    "sender_port": "OutputPort", 
+                    "receiver": "McCPpop1_1", 
+                    "parameters": {}, 
+                    "type": {
+                        "NeuroML": "rsDL"
+                    }, 
+                    "sender": "McCPpop0_2"
+                }, 
+                "Edge McCPpop0_0 to McCPpop1_0": {
+                    "functions": {}, 
+                    "name": "Edge McCPpop0_0 to McCPpop1_0", 
+                    "receiver_port": "InputPort", 
+                    "sender_port": "OutputPort", 
+                    "receiver": "McCPpop1_0", 
+                    "parameters": {}, 
+                    "type": {
+                        "NeuroML": "rsDL"
+                    }, 
+                    "sender": "McCPpop0_0"
+                }, 
+                "Edge McCPpop0_0 to McCPpop1_1": {
+                    "functions": {}, 
+                    "name": "Edge McCPpop0_0 to McCPpop1_1", 
+                    "receiver_port": "InputPort", 
+                    "sender_port": "OutputPort", 
+                    "receiver": "McCPpop1_1", 
+                    "parameters": {}, 
+                    "type": {
+                        "NeuroML": "rsDL"
+                    }, 
+                    "sender": "McCPpop0_0"
+                }, 
+                "Edge McCPpop0_0 to McCPpop1_2": {
+                    "functions": {}, 
+                    "name": "Edge McCPpop0_0 to McCPpop1_2", 
+                    "receiver_port": "InputPort", 
+                    "sender_port": "OutputPort", 
+                    "receiver": "McCPpop1_2", 
+                    "parameters": {}, 
+                    "type": {
+                        "NeuroML": "rsDL"
+                    }, 
+                    "sender": "McCPpop0_0"
+                }, 
+                "Edge McCPpop0_1 to McCPpop1_1": {
+                    "functions": {}, 
+                    "name": "Edge McCPpop0_1 to McCPpop1_1", 
+                    "receiver_port": "InputPort", 
+                    "sender_port": "OutputPort", 
+                    "receiver": "McCPpop1_1", 
+                    "parameters": {}, 
+                    "type": {
+                        "NeuroML": "rsDL"
+                    }, 
+                    "sender": "McCPpop0_1"
+                }, 
+                "Edge McCPpop0_1 to McCPpop1_0": {
+                    "functions": {}, 
+                    "name": "Edge McCPpop0_1 to McCPpop1_0", 
+                    "receiver_port": "InputPort", 
+                    "sender_port": "OutputPort", 
+                    "receiver": "McCPpop1_0", 
+                    "parameters": {}, 
+                    "type": {
+                        "NeuroML": "rsDL"
+                    }, 
+                    "sender": "McCPpop0_1"
+                }
+            }
         }
     ]
 }

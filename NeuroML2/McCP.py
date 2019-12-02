@@ -20,7 +20,7 @@ def generate():
     
 
     net.parameters = { 'amp': 1.5,
-                       'scale': 5}
+                       'scale': 3}
 
     cell = Cell(id='mccp0', lems_source_file='McCPTest.xml')
     net.cells.append(cell)
@@ -100,7 +100,7 @@ def generate():
     ################################################################################
     ###   Build Simulation object & save as JSON
 
-    sim = Simulation(id='SimExampleNet',
+    sim = Simulation(id='Sim%s'%net.id,
                      network=new_file,
                      duration=simtime,
                      dt=dt,
