@@ -16,7 +16,7 @@ def generate():
     ###   Build new network
 
     net = Network(id='McCPNet')
-    net.notes = 'Example of simplified McCP Net'
+    net.notes = 'Example of simplified McCulloch-Pitts based Network'
     
 
     net.parameters = { 'amp': 1.5,

@@ -4,7 +4,7 @@
 
     <ComponentType  name="mccpCell"
                     extends="baseCellMembPotDL"
-                    description="...">
+                    description="Simple McCulloch-Pitts like neuron">
        
     
         <Parameter name="threshold" dimension="none"/>

@@ -5,7 +5,7 @@
             "amp": 1.5, 
             "scale": 3
         }, 
-        "notes": "Example of simplified McCP Net", 
+        "notes": "Example of simplified McCulloch-Pitts based Network", 
         "cells": [
             {
                 "mccp0": {

@@ -2,7 +2,7 @@
     "graphs": [
         {
             "parameters": {}, 
-            "notes": "Example of simplified McCP Net", 
+            "notes": "Example of simplified McCulloch-Pitts based Network", 
             "nodes": {
                 "McCPpop1_0": {
                     "functions": {}, 
