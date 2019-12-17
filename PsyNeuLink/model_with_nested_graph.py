@@ -6,8 +6,8 @@ A = pnl.TransferMechanism(function=pnl.Linear(slope=5.0, intercept=2.0), name='A
 B = pnl.TransferMechanism(function=pnl.Logistic, name='B')
 C = pnl.TransferMechanism(function=pnl.Exponential, name='C')
 
-E = pnl.TransferMechanism(name='E')
-F = pnl.TransferMechanism(name='F')
+E = pnl.TransferMechanism(name='E', function=pnl.Linear(slope=2.0))
+F = pnl.TransferMechanism(name='F', function=pnl.Linear(intercept=2.0))
 
 
 for m in [E, F]:
