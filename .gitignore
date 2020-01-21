@@ -11,3 +11,4 @@
 /NeuroML2/LEMS_SimMcCPNet.xml
 /NeuroML2/*.gv*
 /NeuroML2/report*.txt
+/PsyNeuLink/tests/show_graph OUTPUT
