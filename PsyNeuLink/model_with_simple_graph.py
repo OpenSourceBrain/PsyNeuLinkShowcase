@@ -12,7 +12,7 @@ for m in [A, B, C]:
 comp.add_projection(pnl.MappingProjection(), A, B)
 comp.add_projection(pnl.MappingProjection(), A, C)
 
-comp.run(inputs={A: 1}, log=True, num_trials=3)
+comp.run(inputs={A: 0}, log=True, num_trials=1)
 
 print('Finished running model')
 

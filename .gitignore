@@ -12,3 +12,5 @@
 /NeuroML2/*.gv*
 /NeuroML2/report*.txt
 /PsyNeuLink/tests/show_graph OUTPUT
+/NeuroML2/LEMS_SimABC_nrn.py
+/NeuroML2/x86_64

@@ -8,13 +8,13 @@
     <include href="inputs.nml"/>
     <include href="McCPTest.xml"/>
     <network id="McCPNet">
-        <notes>Example of simplified McCP Net</notes>
+        <notes>Example of simplified McCulloch-Pitts based Network</notes>
         <property tag="recommended_dt_ms" value="0.025"/>
         <property tag="recommended_duration_ms" value="1000.0"/>
         <population id="McCPpop0" component="mccp0" size="3" type="populationList">
             <property tag="color" value=".9 0.9 0"/>
-            <property tag="region" value="region1"/>
             <property tag="radius" value="5"/>
+            <property tag="region" value="region1"/>
             <instance id="0">
                 <location x="966.453535692138757" y="44.073259917535268" z="7.491470058587191"/>
             </instance>
@@ -27,8 +27,8 @@
         </population>
         <population id="McCPpop1" component="mccp0" size="3" type="populationList">
             <property tag="color" value=".9 0 0.9"/>
-            <property tag="region" value="region1"/>
             <property tag="radius" value="5"/>
+            <property tag="region" value="region1"/>
             <instance id="0">
                 <location x="236.809775363117751" y="3.081402172660996" z="788.772717236283484"/>
             </instance>

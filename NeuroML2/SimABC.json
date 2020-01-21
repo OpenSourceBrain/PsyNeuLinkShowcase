@@ -1,15 +1,15 @@
 {
-    "SimMcCPNet": {
+    "SimABC": {
         "version": "NeuroMLlite v0.1.9",
-        "network": "McCPNet.json",
-        "duration": 1000.0,
-        "dt": 0.025,
+        "network": "ABC.json",
+        "duration": 1.0,
+        "dt": 0.1,
         "seed": 123,
         "recordVariables": {
-            "R": {
+            "OUTPUT": {
                 "all": "*"
             },
-            "ISyn": {
+            "INPUT": {
                 "all": "*"
             }
         }
