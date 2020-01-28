@@ -18,7 +18,10 @@ def generate():
     net = Network(id='ABC')
     net.notes = 'Example of simplified network'
     
-    net.parameters = { 'A0': 1}
+    net.parameters = { 'A_input': 1}
+
+    cellInput = Cell(id='a_input', lems_source_file='PNL.xml')
+    net.cells.append(cellInput)
 
     cellA = Cell(id='a', lems_source_file='PNL.xml')
     net.cells.append(cellA)
@@ -33,6 +36,13 @@ def generate():
     r1 = RectangularRegion(id='region1', x=0,y=0,z=0,width=1000,height=100,depth=1000)
     net.regions.append(r1)
 
+
+    pAin = Population(id='A_input', 
+                    size='1', 
+                    component=cellInput.id, 
+                    properties={'color':'0.2 0.2 0.2', 'radius':3},
+                    random_layout = RandomLayout(region=r1.id))
+    net.populations.append(pAin)
 
     pA = Population(id='A', 
                     size='1', 
@@ -55,11 +65,22 @@ def generate():
                     random_layout = RandomLayout(region=r1.id))
     net.populations.append(pC)
     
+    silentDLin = Synapse(id='silentSyn_proj_input', neuroml2_source_file='inputs.nml')
+    net.synapses.append(silentDLin)
+    net.projections.append(Projection(id='proj_input',
+                                      presynaptic=pA.id, 
+                                      postsynaptic=pB.id,
+                                      synapse=rsDL.id,
+                                      pre_synapse=silentDLin.id,
+                                      type='continuousProjection',
+                                      weight='A_input',
+                                      random_connectivity=RandomConnectivity(probability=1)))
+    
     silentDL0 = Synapse(id='silentSyn_proj0', neuroml2_source_file='inputs.nml')
     net.synapses.append(silentDL0)
     net.projections.append(Projection(id='proj0',
-                                      presynaptic=pA.id, 
-                                      postsynaptic=pB.id,
+                                      presynaptic=pAin.id, 
+                                      postsynaptic=pA.id,
                                       synapse=rsDL.id,
                                       pre_synapse=silentDL0.id,
                                       type='continuousProjection',

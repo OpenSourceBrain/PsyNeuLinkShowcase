@@ -22,27 +22,35 @@
     <Simulation id="SimABC" length="1.0ms" step="0.1ms" target="ABC" seed="123">  <!-- Note seed: ensures same random numbers used every run -->
         
         <Display id="A_0_INPUT" title="Plots of A_0_INPUT" timeScale="1ms" xmin="-0.1" xmax="1.1" ymin="-1" ymax="1">
-            <Line id="A_0_a_INPUT" quantity="A/0/a/INPUT" scale="1" color="#d54f33" timeScale="1ms"/>
+            <Line id="A_0_a_INPUT" quantity="A/0/a/INPUT" scale="1" color="#6aa799" timeScale="1ms"/>
         </Display>
         
         <Display id="A_0_OUTPUT" title="Plots of A_0_OUTPUT" timeScale="1ms" xmin="-0.1" xmax="1.1" ymin="-1" ymax="1">
-            <Line id="A_0_a_OUTPUT" quantity="A/0/a/OUTPUT" scale="1" color="#0534e4" timeScale="1ms"/>
+            <Line id="A_0_a_OUTPUT" quantity="A/0/a/OUTPUT" scale="1" color="#029a72" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="A_input_0_INPUT" title="Plots of A_input_0_INPUT" timeScale="1ms" xmin="-0.1" xmax="1.1" ymin="-1" ymax="1">
+            <Line id="A_input_0_a_input_INPUT" quantity="A_input/0/a_input/INPUT" scale="1" color="#d340bb" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="A_input_0_OUTPUT" title="Plots of A_input_0_OUTPUT" timeScale="1ms" xmin="-0.1" xmax="1.1" ymin="-1" ymax="1">
+            <Line id="A_input_0_a_input_OUTPUT" quantity="A_input/0/a_input/OUTPUT" scale="1" color="#4c73a9" timeScale="1ms"/>
         </Display>
         
         <Display id="B_0_INPUT" title="Plots of B_0_INPUT" timeScale="1ms" xmin="-0.1" xmax="1.1" ymin="-1" ymax="1">
-            <Line id="B_0_b_INPUT" quantity="B/0/b/INPUT" scale="1" color="#98e752" timeScale="1ms"/>
+            <Line id="B_0_b_INPUT" quantity="B/0/b/INPUT" scale="1" color="#5e503a" timeScale="1ms"/>
         </Display>
         
         <Display id="B_0_OUTPUT" title="Plots of B_0_OUTPUT" timeScale="1ms" xmin="-0.1" xmax="1.1" ymin="-1" ymax="1">
-            <Line id="B_0_b_OUTPUT" quantity="B/0/b/OUTPUT" scale="1" color="#bca074" timeScale="1ms"/>
+            <Line id="B_0_b_OUTPUT" quantity="B/0/b/OUTPUT" scale="1" color="#3193ca" timeScale="1ms"/>
         </Display>
         
         <Display id="C_0_INPUT" title="Plots of C_0_INPUT" timeScale="1ms" xmin="-0.1" xmax="1.1" ymin="-1" ymax="1">
-            <Line id="C_0_c_INPUT" quantity="C/0/c/INPUT" scale="1" color="#632794" timeScale="1ms"/>
+            <Line id="C_0_c_INPUT" quantity="C/0/c/INPUT" scale="1" color="#90e5e9" timeScale="1ms"/>
         </Display>
         
         <Display id="C_0_OUTPUT" title="Plots of C_0_OUTPUT" timeScale="1ms" xmin="-0.1" xmax="1.1" ymin="-1" ymax="1">
-            <Line id="C_0_c_OUTPUT" quantity="C/0/c/OUTPUT" scale="1" color="#8a5d88" timeScale="1ms"/>
+            <Line id="C_0_c_OUTPUT" quantity="C/0/c/OUTPUT" scale="1" color="#29645f" timeScale="1ms"/>
         </Display>
         
         <OutputFile id="A_0_INPUT_dat" fileName="A_0.INPUT.dat">
@@ -51,6 +59,14 @@
         
         <OutputFile id="A_0_OUTPUT_dat" fileName="A_0.OUTPUT.dat">
             <OutputColumn id="A_0_a_OUTPUT" quantity="A/0/a/OUTPUT"/> 
+        </OutputFile>
+        
+        <OutputFile id="A_input_0_INPUT_dat" fileName="A_input_0.INPUT.dat">
+            <OutputColumn id="A_input_0_a_input_INPUT" quantity="A_input/0/a_input/INPUT"/> 
+        </OutputFile>
+        
+        <OutputFile id="A_input_0_OUTPUT_dat" fileName="A_input_0.OUTPUT.dat">
+            <OutputColumn id="A_input_0_a_input_OUTPUT" quantity="A_input/0/a_input/OUTPUT"/> 
         </OutputFile>
         
         <OutputFile id="B_0_INPUT_dat" fileName="B_0.INPUT.dat">

@@ -6,10 +6,38 @@
     <ComponentType name="pnlTransferMechanism"
                    extends="baseCellMembPotDL"
                    description="Base type for PNL based TransferMechanism">
-        
-        <!--<Parameter name="default" dimension="none"/>-->
+       
+        <Exposure name="OUTPUT" dimension="none"/>
+        <Exposure name="INPUT" dimension="none"/>
         
     </ComponentType>
+    
+    <ComponentType  name="inputNode"
+                    extends="pnlTransferMechanism"
+                    description="...">
+       
+        <Parameter name="variable" dimension="none"/>
+        
+        <Attachments name="synapses" type="basePointCurrentDL"/>  <!-- Inputs are dimensionless "currents", through "synapses" - to fit into NML framework -->
+        
+        <Dynamics>
+
+            <DerivedVariable name="INPUT" dimension="none" exposure="INPUT" value="variable"/>
+        
+            <!-- Set V to zero for now - note some NML pipelines will require some kind of "voltage"... -->
+            <DerivedVariable name="V" dimension="none" exposure="V" value="0"/>
+            
+            <DerivedVariable name="OUTPUT" dimension="none" exposure="OUTPUT" value="INPUT"/>
+        
+            <!-- On condition is not need on the model but NeuroML requires its definition -->
+            <OnCondition test="OUTPUT .lt. 0">
+                <EventOut port="spike"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType>
+    
     
     <ComponentType  name="pnlLinearFunctionTM"
                     extends="pnlTransferMechanism"
@@ -18,16 +46,13 @@
         <Parameter name="slope" dimension="none"/>
         <Parameter name="intercept" dimension="none"/>
         
-        <Attachments name="synapses" type="basePointCurrentDL"/>
+        <Attachments name="synapses" type="basePointCurrentDL"/>  <!-- Inputs are dimensionless "currents", through "synapses" - to fit into NML framework -->
         
-        <Exposure name="OUTPUT" dimension="none"/>
-        <Exposure name="INPUT" dimension="none"/>
-
         <Dynamics>
 
             <DerivedVariable name="INPUT" dimension="none" exposure="INPUT" select="synapses[*]/I" reduce="add" />
         
-            <!-- Set V to zero for now... -->
+            <!-- Set V to zero for now - note some NML pipelines will require some kind of "voltage"... -->
             <DerivedVariable name="V" dimension="none" exposure="V" value="0"/>
             
             <DerivedVariable name="OUTPUT" dimension="none" exposure="OUTPUT" value="INPUT*slope + intercept"/>
@@ -50,10 +75,7 @@
         <Parameter name="x_0" dimension="none"/>
         <Parameter name="offset" dimension="none"/>
         
-        <Attachments name="synapses" type="basePointCurrentDL"/>
-        
-        <Exposure name="OUTPUT" dimension="none"/>
-        <Exposure name="INPUT" dimension="none"/>
+        <Attachments name="synapses" type="basePointCurrentDL"/>  <!-- Inputs are dimensionless "currents", through "synapses" - to fit into NML framework -->
 
         <Dynamics>
 
@@ -82,11 +104,8 @@
         <Parameter name="bias" dimension="none"/>
         <Parameter name="offset" dimension="none"/>
         
-        <Attachments name="synapses" type="basePointCurrentDL"/>
+        <Attachments name="synapses" type="basePointCurrentDL"/>  <!-- Inputs are dimensionless "currents", through "synapses" - to fit into NML framework -->
         
-        <Exposure name="OUTPUT" dimension="none"/>
-        <Exposure name="INPUT" dimension="none"/>
-
         <Dynamics>
 
             <DerivedVariable name="INPUT" dimension="none" exposure="INPUT" select="synapses[*]/I" reduce="add" />
@@ -153,9 +172,11 @@
         
     <synapseDL id="rsDL" />
     <silentSynapseDL id="silentDL"/>
+    <silentSynapseDL id="silentSyn_proj_input"/>
     <silentSynapseDL id="silentSyn_proj0"/>
     <silentSynapseDL id="silentSyn_proj1"/>
     
+    <inputNode id="a_input" variable="0.1"/>
     <pnlLinearFunctionTM id="a" slope="5" intercept="2"/>
     <pnlLogisticFunctionTM id="b" gain="1.0" bias="0.0" x_0="0.0" offset="0.0"/>
     <pnlExponentialFunctionTM id="c" rate="1.0" bias="0.0" scale="1.0" offset="0.0"/>
