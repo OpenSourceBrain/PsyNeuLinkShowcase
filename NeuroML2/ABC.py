@@ -18,9 +18,11 @@ def generate():
     net = Network(id='ABC')
     net.notes = 'Example of simplified network'
     
-    net.parameters = { 'A_input': 1}
+    net.parameters = { 'A_initial': 0.11}
 
-    cellInput = Cell(id='a_input', lems_source_file='PNL.xml')
+    cellInput = Cell(id='a_input', 
+                     lems_source_file='PNL.xml',
+                     parameters={'variable':'A_initial'})
     net.cells.append(cellInput)
 
     cellA = Cell(id='a', lems_source_file='PNL.xml')
@@ -30,7 +32,7 @@ def generate():
     cellC = Cell(id='c', lems_source_file='PNL.xml')
     net.cells.append(cellC)
 
-    rsDL = Synapse(id='rsDL', neuroml2_source_file='inputs.nml')
+    rsDL = Synapse(id='rsDL', lems_source_file='PNL.xml')
     net.synapses.append(rsDL)
 
     r1 = RectangularRegion(id='region1', x=0,y=0,z=0,width=1000,height=100,depth=1000)
@@ -65,7 +67,7 @@ def generate():
                     random_layout = RandomLayout(region=r1.id))
     net.populations.append(pC)
     
-    silentDLin = Synapse(id='silentSyn_proj_input', neuroml2_source_file='inputs.nml')
+    silentDLin = Synapse(id='silentSyn_proj_input', lems_source_file='PNL.xml')
     net.synapses.append(silentDLin)
     net.projections.append(Projection(id='proj_input',
                                       presynaptic=pA.id, 
@@ -73,10 +75,10 @@ def generate():
                                       synapse=rsDL.id,
                                       pre_synapse=silentDLin.id,
                                       type='continuousProjection',
-                                      weight='A_input',
+                                      weight=1,
                                       random_connectivity=RandomConnectivity(probability=1)))
     
-    silentDL0 = Synapse(id='silentSyn_proj0', neuroml2_source_file='inputs.nml')
+    silentDL0 = Synapse(id='silentSyn_proj0', lems_source_file='PNL.xml')
     net.synapses.append(silentDL0)
     net.projections.append(Projection(id='proj0',
                                       presynaptic=pAin.id, 
@@ -87,7 +89,7 @@ def generate():
                                       weight=1,
                                       random_connectivity=RandomConnectivity(probability=1)))
     
-    silentDL1 = Synapse(id='silentSyn_proj1', neuroml2_source_file='inputs.nml')
+    silentDL1 = Synapse(id='silentSyn_proj1', lems_source_file='PNL.xml')
     net.synapses.append(silentDL1)
     net.projections.append(Projection(id='proj1',
                                       presynaptic=pA.id, 

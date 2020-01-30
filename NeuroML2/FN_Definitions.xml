@@ -13,7 +13,7 @@
         <Parameter name="V0" dimension="none"/>
         <Parameter name="W0" dimension="none"/>
 
-        <Constant name="TS" dimension="time" value="1ms"/>
+        <Constant name="MSEC" dimension="time" value="1ms"/>
        
         <Attachments name="synapses" type="basePointCurrentDL"/>
 
@@ -36,8 +36,8 @@
 
             <DerivedVariable name="ISyn" dimension="none" select="synapses[*]/I" reduce="add" />
 
-            <TimeDerivative variable="V" value="(F - W + ISyn) / TS"/>
-            <TimeDerivative variable="W" value="phi * (V + a - b * W) / TS"/>
+            <TimeDerivative variable="V" value="(F - W + ISyn) / MSEC"/>
+            <TimeDerivative variable="W" value="phi * (V + a - b * W) / MSEC"/>
 
             <OnStart>
                 <StateAssignment variable="V" value="V0"/>

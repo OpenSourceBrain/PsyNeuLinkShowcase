@@ -54,7 +54,7 @@
         <InstanceRequirement name="peer" type="baseGradedSynapse"/>
 
         <Dynamics>
-            <DerivedVariable name="I" exposure="I"  value="0"/>
+            <DerivedVariable name="I" dimension="none" exposure="I"  value="0"/>
         </Dynamics>
 
     </ComponentType>
@@ -76,7 +76,7 @@
 
         <Dynamics>
             <DerivedVariable name="rpeer" dimension="none" select="peer/R"/>
-            <DerivedVariable name="I" exposure="I"  value="weight * SEC * rpeer"/>
+            <DerivedVariable name="I" exposure="I" dimension="none" value="weight * SEC * rpeer"/>
         </Dynamics>
         
     </ComponentType>

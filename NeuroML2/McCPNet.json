@@ -16,12 +16,12 @@
         "synapses": [
             {
                 "silentSyn_proj0": {
-                    "neuroml2_source_file": "inputs.nml"
+                    "lems_source_file": "McCPTest.xml"
                 }
             },
             {
                 "rsDL": {
-                    "neuroml2_source_file": "inputs.nml"
+                    "lems_source_file": "McCPTest.xml"
                 }
             }
         ],

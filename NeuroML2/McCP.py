@@ -25,9 +25,9 @@ def generate():
     cell = Cell(id='mccp0', lems_source_file='McCPTest.xml')
     net.cells.append(cell)
 
-    silentDL = Synapse(id='silentSyn_proj0', neuroml2_source_file='inputs.nml')
+    silentDL = Synapse(id='silentSyn_proj0', lems_source_file='McCPTest.xml')
     net.synapses.append(silentDL)
-    rsDL = Synapse(id='rsDL', neuroml2_source_file='inputs.nml')
+    rsDL = Synapse(id='rsDL', lems_source_file='McCPTest.xml')
     net.synapses.append(rsDL)
 
 
