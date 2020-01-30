@@ -1,0 +1,84 @@
+{
+    "graphs": [
+        {
+            "name": "ABC",
+            "notes": "Example of simplified network",
+            "nodes": {
+                "A_input_0": {
+                    "type": {
+                        "NeuroML": "a_input"
+                    },
+                    "name": "A_input_0",
+                    "parameters": {},
+                    "functions": {}
+                },
+                "A_0": {
+                    "type": {
+                        "NeuroML": "a"
+                    },
+                    "name": "A_0",
+                    "parameters": {},
+                    "functions": {}
+                },
+                "B_0": {
+                    "type": {
+                        "NeuroML": "b"
+                    },
+                    "name": "B_0",
+                    "parameters": {},
+                    "functions": {}
+                },
+                "C_0": {
+                    "type": {
+                        "NeuroML": "c"
+                    },
+                    "name": "C_0",
+                    "parameters": {},
+                    "functions": {}
+                }
+            },
+            "edges": {
+                "Edge A_0 to B_0": {
+                    "name": "Edge A_0 to B_0",
+                    "type": {
+                        "NeuroML": "rsDL"
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "A_0",
+                    "receiver": "B_0",
+                    "weight": 1
+                },
+                "Edge A_input_0 to A_0": {
+                    "name": "Edge A_input_0 to A_0",
+                    "type": {
+                        "NeuroML": "rsDL"
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "A_input_0",
+                    "receiver": "A_0",
+                    "weight": 1
+                },
+                "Edge A_0 to C_0": {
+                    "name": "Edge A_0 to C_0",
+                    "type": {
+                        "NeuroML": "rsDL"
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "A_0",
+                    "receiver": "C_0",
+                    "weight": 1
+                }
+            },
+            "parameters": {}
+        }
+    ]
+}

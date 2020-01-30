@@ -1,0 +1,52 @@
+{
+    "graphs": [
+        {
+            "name": "ABC_hl",
+            "notes": "Example of simplified network High Level (population/projection based) description",
+            "nodes": {
+                "A_input": {
+                    "type": {
+                        "NeuroML": "a_input"
+                    },
+                    "name": "A_input",
+                    "parameters": {
+                        "size": 1
+                    },
+                    "functions": {}
+                },
+                "A": {
+                    "type": {
+                        "NeuroML": "a"
+                    },
+                    "name": "A",
+                    "parameters": {
+                        "size": 1
+                    },
+                    "functions": {}
+                },
+                "B": {
+                    "type": {
+                        "NeuroML": "b"
+                    },
+                    "name": "B",
+                    "parameters": {
+                        "size": 1
+                    },
+                    "functions": {}
+                },
+                "C": {
+                    "type": {
+                        "NeuroML": "c"
+                    },
+                    "name": "C",
+                    "parameters": {
+                        "size": 1
+                    },
+                    "functions": {}
+                }
+            },
+            "edges": {},
+            "parameters": {}
+        }
+    ]
+}
