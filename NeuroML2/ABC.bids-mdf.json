@@ -3,37 +3,50 @@
         {
             "name": "ABC",
             "notes": "Example of simplified network",
+            "controller": null,
             "nodes": {
                 "A_input_0": {
                     "type": {
-                        "NeuroML": "a_input"
+                        "NeuroML": "a_input",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "A_input_0",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 },
                 "A_0": {
                     "type": {
-                        "NeuroML": "a"
+                        "NeuroML": "a",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "A_0",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 },
                 "B_0": {
                     "type": {
-                        "NeuroML": "b"
+                        "NeuroML": "b",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "B_0",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 },
                 "C_0": {
                     "type": {
-                        "NeuroML": "c"
+                        "NeuroML": "c",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "C_0",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 }
             },
@@ -41,7 +54,8 @@
                 "Edge A_0 to B_0": {
                     "name": "Edge A_0 to B_0",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -54,7 +68,8 @@
                 "Edge A_input_0 to A_0": {
                     "name": "Edge A_input_0 to A_0",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -67,7 +82,8 @@
                 "Edge A_0 to C_0": {
                     "name": "Edge A_0 to C_0",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -78,7 +94,15 @@
                     "weight": 1
                 }
             },
-            "parameters": {}
+            "parameters": {
+                "PNL": {
+                    "required_node_roles": []
+                }
+            },
+            "type": {
+                "PNL": "Composition",
+                "generic": "graph"
+            }
         }
     ]
 }

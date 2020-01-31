@@ -17,3 +17,7 @@
 /NeuroML2/LEMS_FitzHughNagumo.png
 /NeuroML2/LEMS_SimABC.png
 /NeuroML2/LEMS_SimMcCPNet.png
+/NeuroML2/__pycache__
+/NeuroML2/show_graph OUTPUT
+/PsyNeuLink/model_with_branching_graph.converted.py
+/PsyNeuLink/model_with_branching_graph.json
