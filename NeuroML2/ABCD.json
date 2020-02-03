@@ -1,9 +1,9 @@
 {
-    "ABC": {
+    "ABCD": {
         "version": "NeuroMLlite v0.1.9",
         "parameters": {
             "A_initial": 0,
-            "A_slope": 5
+            "A_slope": 2
         },
         "notes": "Example of simplified network",
         "cells": [
@@ -17,10 +17,7 @@
             },
             {
                 "a": {
-                    "lems_source_file": "PNL.xml",
-                    "parameters": {
-                        "slope": "A_slope"
-                    }
+                    "lems_source_file": "PNL.xml"
                 }
             },
             {
@@ -30,6 +27,11 @@
             },
             {
                 "c": {
+                    "lems_source_file": "PNL.xml"
+                }
+            },
+            {
+                "d": {
                     "lems_source_file": "PNL.xml"
                 }
             }
@@ -52,6 +54,16 @@
             },
             {
                 "silentSyn_proj1": {
+                    "lems_source_file": "PNL.xml"
+                }
+            },
+            {
+                "silentSyn_proj2": {
+                    "lems_source_file": "PNL.xml"
+                }
+            },
+            {
+                "silentSyn_proj3": {
                     "lems_source_file": "PNL.xml"
                 }
             }
@@ -100,7 +112,7 @@
                     "size": "1",
                     "component": "b",
                     "properties": {
-                        "color": ".9 0 0",
+                        "color": ".8 .8 .8",
                         "radius": 5
                     },
                     "random_layout": {
@@ -112,6 +124,19 @@
                 "C": {
                     "size": "1",
                     "component": "c",
+                    "properties": {
+                        "color": "0.7 0.7 0.7",
+                        "radius": 5
+                    },
+                    "random_layout": {
+                        "region": "region1"
+                    }
+                }
+            },
+            {
+                "D": {
+                    "size": "1",
+                    "component": "d",
                     "properties": {
                         "color": "0.7 0 0",
                         "radius": 5
@@ -155,6 +180,32 @@
                     "postsynaptic": "C",
                     "synapse": "rsDL",
                     "pre_synapse": "silentSyn_proj1",
+                    "type": "continuousProjection",
+                    "weight": 1,
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            },
+            {
+                "proj2": {
+                    "presynaptic": "B",
+                    "postsynaptic": "D",
+                    "synapse": "rsDL",
+                    "pre_synapse": "silentSyn_proj2",
+                    "type": "continuousProjection",
+                    "weight": 1,
+                    "random_connectivity": {
+                        "probability": 1
+                    }
+                }
+            },
+            {
+                "proj3": {
+                    "presynaptic": "C",
+                    "postsynaptic": "D",
+                    "synapse": "rsDL",
+                    "pre_synapse": "silentSyn_proj3",
                     "type": "continuousProjection",
                     "weight": 1,
                     "random_connectivity": {

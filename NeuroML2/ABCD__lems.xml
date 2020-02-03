@@ -96,11 +96,14 @@
     </Dynamics>
   </ComponentType>
   <Component id="a_input" type="inputNode" variable="0"/>
-  <Component id="a" intercept="2" slope="5" type="pnlLinearFunctionTM"/>
+  <Component id="a" intercept="2" slope="2" type="pnlLinearFunctionTM"/>
   <Component bias="0.0" gain="1.0" id="b" offset="0.0" type="pnlLogisticFunctionTM" x_0="0.0"/>
   <Component bias="0.0" id="c" offset="0.0" rate="1.0" scale="1.0" type="pnlExponentialFunctionTM"/>
+  <Component id="d" rate="0.05" time_step_size="0.1s" type="pnlSimpleIntegratorMechanism"/>
   <Component id="rsDL" type="synapseDL"/>
   <Component id="silentSyn_proj_input" type="silentSynapseDL"/>
   <Component id="silentSyn_proj0" type="silentSynapseDL"/>
   <Component id="silentSyn_proj1" type="silentSynapseDL"/>
+  <Component id="silentSyn_proj2" type="silentSynapseDL"/>
+  <Component id="silentSyn_proj3" type="silentSynapseDL"/>
 </Lems>

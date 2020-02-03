@@ -5,6 +5,11 @@ python ABC.py -pnl
 jnml LEMS_SimABC.xml -graph
 jnml LEMS_SimABC.xml -nogui
 
+python ABCD.py -jnml
+python ABCD.py -pnl
+jnml LEMS_SimABCD.xml -graph
+jnml LEMS_SimABCD.xml -nogui
+
 
 python McCP.py -jnml
 python McCP.py -pnl

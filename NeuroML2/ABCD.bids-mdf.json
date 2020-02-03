@@ -1,0 +1,147 @@
+{
+    "graphs": [
+        {
+            "name": "ABCD",
+            "notes": "Example of simplified network",
+            "controller": null,
+            "nodes": {
+                "A_input_0": {
+                    "type": {
+                        "NeuroML": "a_input",
+                        "PNL": "TransferMechanism"
+                    },
+                    "name": "A_input_0",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": {}
+                },
+                "A_0": {
+                    "type": {
+                        "NeuroML": "a",
+                        "PNL": "TransferMechanism"
+                    },
+                    "name": "A_0",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": {}
+                },
+                "B_0": {
+                    "type": {
+                        "NeuroML": "b",
+                        "PNL": "TransferMechanism"
+                    },
+                    "name": "B_0",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": {}
+                },
+                "C_0": {
+                    "type": {
+                        "NeuroML": "c",
+                        "PNL": "TransferMechanism"
+                    },
+                    "name": "C_0",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": {}
+                },
+                "D_0": {
+                    "type": {
+                        "NeuroML": "d",
+                        "PNL": "TransferMechanism"
+                    },
+                    "name": "D_0",
+                    "parameters": {
+                        "PNL": {}
+                    },
+                    "functions": {}
+                }
+            },
+            "edges": {
+                "Edge A_0 to B_0": {
+                    "name": "Edge A_0 to B_0",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "A_0",
+                    "receiver": "B_0",
+                    "weight": 1
+                },
+                "Edge A_input_0 to A_0": {
+                    "name": "Edge A_input_0 to A_0",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "A_input_0",
+                    "receiver": "A_0",
+                    "weight": 1
+                },
+                "Edge A_0 to C_0": {
+                    "name": "Edge A_0 to C_0",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "A_0",
+                    "receiver": "C_0",
+                    "weight": 1
+                },
+                "Edge B_0 to D_0": {
+                    "name": "Edge B_0 to D_0",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "B_0",
+                    "receiver": "D_0",
+                    "weight": 1
+                },
+                "Edge C_0 to D_0": {
+                    "name": "Edge C_0 to D_0",
+                    "type": {
+                        "PNL": "MappingProjection",
+                        "generic": null
+                    },
+                    "parameters": {},
+                    "functions": {},
+                    "sender_port": "OutputPort",
+                    "receiver_port": "InputPort",
+                    "sender": "C_0",
+                    "receiver": "D_0",
+                    "weight": 1
+                }
+            },
+            "parameters": {
+                "PNL": {
+                    "required_node_roles": []
+                }
+            },
+            "type": {
+                "PNL": "Composition",
+                "generic": "graph"
+            }
+        }
+    ]
+}
