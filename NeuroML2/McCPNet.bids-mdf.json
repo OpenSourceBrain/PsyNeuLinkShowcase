@@ -7,69 +7,153 @@
             "nodes": {
                 "McCPpop0_0": {
                     "type": {
-                        "NeuroML": "mccp0",
-                        "PNL": "TransferMechanism"
+                        "PNL": "The type of mccpCell",
+                        "generic": null
                     },
                     "name": "McCPpop0_0",
                     "parameters": {
                         "PNL": {}
                     },
-                    "functions": {}
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop0_0.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 "McCPpop0_1": {
                     "type": {
-                        "NeuroML": "mccp0",
-                        "PNL": "TransferMechanism"
+                        "PNL": "The type of mccpCell",
+                        "generic": null
                     },
                     "name": "McCPpop0_1",
                     "parameters": {
                         "PNL": {}
                     },
-                    "functions": {}
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop0_1.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 "McCPpop0_2": {
                     "type": {
-                        "NeuroML": "mccp0",
-                        "PNL": "TransferMechanism"
+                        "PNL": "The type of mccpCell",
+                        "generic": null
                     },
                     "name": "McCPpop0_2",
                     "parameters": {
                         "PNL": {}
                     },
-                    "functions": {}
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop0_2.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 "McCPpop1_0": {
                     "type": {
-                        "NeuroML": "mccp0",
-                        "PNL": "TransferMechanism"
+                        "PNL": "The type of mccpCell",
+                        "generic": null
                     },
                     "name": "McCPpop1_0",
                     "parameters": {
                         "PNL": {}
                     },
-                    "functions": {}
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop1_0.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 "McCPpop1_1": {
                     "type": {
-                        "NeuroML": "mccp0",
-                        "PNL": "TransferMechanism"
+                        "PNL": "The type of mccpCell",
+                        "generic": null
                     },
                     "name": "McCPpop1_1",
                     "parameters": {
                         "PNL": {}
                     },
-                    "functions": {}
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop1_1.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
                 },
                 "McCPpop1_2": {
                     "type": {
-                        "NeuroML": "mccp0",
-                        "PNL": "TransferMechanism"
+                        "PNL": "The type of mccpCell",
+                        "generic": null
                     },
                     "name": "McCPpop1_2",
                     "parameters": {
                         "PNL": {}
                     },
-                    "functions": {}
+                    "functions": [
+                        {
+                            "type": {
+                                "generic": "The function of mccpCell"
+                            },
+                            "name": "Function_The function of mccpCell",
+                            "args": {
+                                "threshold": {
+                                    "type": "float",
+                                    "source": "McCPpop1_2.input_ports.threshold",
+                                    "value": 1
+                                }
+                            }
+                        }
+                    ]
                 }
             },
             "edges": {

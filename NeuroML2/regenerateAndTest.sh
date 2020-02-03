@@ -10,6 +10,7 @@ python ABCD.py -pnl
 jnml LEMS_SimABCD.xml -graph
 jnml LEMS_SimABCD.xml -nogui
 
+python test_bids_import.py 
 
 python McCP.py -jnml
 python McCP.py -pnl

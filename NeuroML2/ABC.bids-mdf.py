@@ -1,12 +1,12 @@
-import psyneulink as pnl
 import ABC
+import psyneulink as pnl
 
 ABC = pnl.Composition(name='ABC')
 
-A_0 = pnl.TransferMechanism(name='A_0')
-A_input_0 = pnl.TransferMechanism(name='A_input_0')
-B_0 = pnl.TransferMechanism(name='B_0')
-C_0 = pnl.TransferMechanism(name='C_0')
+A_0 = pnl.TransferMechanism(name='A_0', function=pnl.Linear(intercept=2, slope=5))
+A_input_0 = pnl.TransferMechanism(name='A_input_0', function=pnl.Linear(default_variable=0))
+B_0 = pnl.TransferMechanism(name='B_0', function=pnl.Logistic)
+C_0 = pnl.TransferMechanism(name='C_0', function=pnl.Exponential)
 
 ABC.add_node(A_0)
 ABC.add_node(A_input_0)

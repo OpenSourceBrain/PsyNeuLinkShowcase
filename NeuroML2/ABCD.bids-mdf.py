@@ -3,11 +3,11 @@ import ABCD
 
 ABCD = pnl.Composition(name='ABCD')
 
-A_0 = pnl.TransferMechanism(name='A_0')
-A_input_0 = pnl.TransferMechanism(name='A_input_0')
-B_0 = pnl.TransferMechanism(name='B_0')
-C_0 = pnl.TransferMechanism(name='C_0')
-D_0 = pnl.TransferMechanism(name='D_0')
+A_0 = pnl.TransferMechanism(name='A_0', function=pnl.Linear(intercept=2, slope=2))
+A_input_0 = pnl.TransferMechanism(name='A_input_0', function=pnl.Linear(default_variable=0))
+B_0 = pnl.TransferMechanism(name='B_0', function=pnl.Logistic)
+C_0 = pnl.TransferMechanism(name='C_0', function=pnl.Exponential)
+D_0 = pnl.IntegratorMechanism(name='D_0', function=pnl.SimpleIntegrator(rate=0.05))
 
 ABCD.add_node(A_0)
 ABCD.add_node(A_input_0)
