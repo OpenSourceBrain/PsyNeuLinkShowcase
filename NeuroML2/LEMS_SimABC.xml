@@ -2,7 +2,7 @@
     
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.5.0 (libNeuroML v0.2.50)
+        This LEMS file has been automatically generated using PyNeuroML v0.5.1 (libNeuroML v0.2.50)
 
      -->
     
@@ -15,8 +15,8 @@
     <Include file="Simulation.xml"/>
     
     <Include file="PyNN.xml"/>
-    <Include file="PNL.xml"/>
     <Include file="ABC.net.nml"/>
+    <Include file="ABC__lems.xml"/>
    
     <Simulation id="SimABC" length="1.0ms" step="0.1ms" target="ABC" seed="123">  <!-- Note seed: ensures same random numbers used every run -->
         

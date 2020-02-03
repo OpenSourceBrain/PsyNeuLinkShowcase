@@ -3,29 +3,18 @@
   <ComponentType description="Simple McCulloch-Pitts like neuron" extends="baseCellMembPotDL" name="mccpCell">
     <Parameter dimension="none" name="threshold"/>
     <Attachments name="synapses" type="basePointCurrentDL"/>
-    <Exposure dimension="none" name="ISyn"/>
     <Exposure dimension="none" name="R"/>
+    <Exposure dimension="none" name="ISyn"/>
     <Dynamics>
       <DerivedVariable dimension="none" exposure="ISyn" name="ISyn" reduce="add" select="synapses[*]/I"/>
-      <DerivedVariable dimension="none" exposure="R" name="R" value="H(ISyn-threshold)"/>
       <DerivedVariable dimension="none" exposure="V" name="V" value="0"/>
+      <DerivedVariable dimension="none" exposure="R" name="R" value="H(ISyn-threshold)"/>
       <OnCondition test="R .lt. 0">
         <EventOut port="spike"/>
       </OnCondition>
     </Dynamics>
   </ComponentType>
   <ComponentType description="Base type for dimensionless graded synapses" extends="baseSynapseDL" name="baseGradedSynapseDL"/>
-  <ComponentType description="..." extends="baseGradedSynapseDL" name="rateSynapseDL">
-    <Property defaultValue="1" dimension="none" name="weight"/>
-    <Constant dimension="time" name="SEC" value="1s"/>
-    <Exposure dimension="none" name="I"/>
-    <Requirement dimension="none" name="R"/>
-    <InstanceRequirement name="peer" type="rateSynapseDL"/>
-    <Dynamics>
-      <DerivedVariable dimension="none" exposure="I" name="I" value="weight * SEC * rpeer"/>
-      <DerivedVariable dimension="none" name="rpeer" select="peer/R"/>
-    </Dynamics>
-  </ComponentType>
   <ComponentType description="Dummy synapse which emits no current. Used as presynaptic endpoint for analog synaptic connection." extends="baseGradedSynapseDL" name="silentRateSynapseDL">
     <Property defaultValue="1" dimension="none" name="weight"/>
     <Exposure dimension="none" name="I"/>
@@ -34,7 +23,18 @@
       <DerivedVariable dimension="none" exposure="I" name="I" value="0"/>
     </Dynamics>
   </ComponentType>
-  <Component id="rsDL" type="rateSynapseDL"/>
+  <ComponentType description="..." extends="baseGradedSynapseDL" name="rateSynapseDL">
+    <Property defaultValue="1" dimension="none" name="weight"/>
+    <Constant dimension="time" name="SEC" value="1s"/>
+    <Exposure dimension="none" name="I"/>
+    <Requirement dimension="none" name="R"/>
+    <InstanceRequirement name="peer" type="rateSynapseDL"/>
+    <Dynamics>
+      <DerivedVariable dimension="none" name="rpeer" select="peer/R"/>
+      <DerivedVariable dimension="none" exposure="I" name="I" value="weight * SEC * rpeer"/>
+    </Dynamics>
+  </ComponentType>
   <Component id="mccp0" threshold="1" type="mccpCell"/>
   <Component id="silentSyn_proj0" type="silentRateSynapseDL"/>
+  <Component id="rsDL" type="rateSynapseDL"/>
 </Lems>

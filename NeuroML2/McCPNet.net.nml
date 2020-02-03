@@ -6,7 +6,7 @@
         amp = 1.5
         scale = 3</notes>
     <include href="inputs.nml"/>
-    <include href="McCPTest.xml"/>
+    <include href="McCPNet__lems.xml"/>
     <network id="McCPNet">
         <notes>Example of simplified McCulloch-Pitts based Network</notes>
         <property tag="recommended_dt_ms" value="0.025"/>

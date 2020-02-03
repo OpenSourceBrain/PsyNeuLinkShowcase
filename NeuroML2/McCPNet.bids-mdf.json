@@ -3,53 +3,72 @@
         {
             "name": "McCPNet",
             "notes": "Example of simplified McCulloch-Pitts based Network",
+            "controller": null,
             "nodes": {
                 "McCPpop0_0": {
                     "type": {
-                        "NeuroML": "mccp0"
+                        "NeuroML": "mccp0",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "McCPpop0_0",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 },
                 "McCPpop0_1": {
                     "type": {
-                        "NeuroML": "mccp0"
+                        "NeuroML": "mccp0",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "McCPpop0_1",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 },
                 "McCPpop0_2": {
                     "type": {
-                        "NeuroML": "mccp0"
+                        "NeuroML": "mccp0",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "McCPpop0_2",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 },
                 "McCPpop1_0": {
                     "type": {
-                        "NeuroML": "mccp0"
+                        "NeuroML": "mccp0",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "McCPpop1_0",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 },
                 "McCPpop1_1": {
                     "type": {
-                        "NeuroML": "mccp0"
+                        "NeuroML": "mccp0",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "McCPpop1_1",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 },
                 "McCPpop1_2": {
                     "type": {
-                        "NeuroML": "mccp0"
+                        "NeuroML": "mccp0",
+                        "PNL": "TransferMechanism"
                     },
                     "name": "McCPpop1_2",
-                    "parameters": {},
+                    "parameters": {
+                        "PNL": {}
+                    },
                     "functions": {}
                 }
             },
@@ -57,7 +76,8 @@
                 "Edge McCPpop0_0 to McCPpop1_0": {
                     "name": "Edge McCPpop0_0 to McCPpop1_0",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -70,7 +90,8 @@
                 "Edge McCPpop0_0 to McCPpop1_1": {
                     "name": "Edge McCPpop0_0 to McCPpop1_1",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -83,7 +104,8 @@
                 "Edge McCPpop0_0 to McCPpop1_2": {
                     "name": "Edge McCPpop0_0 to McCPpop1_2",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -96,7 +118,8 @@
                 "Edge McCPpop0_1 to McCPpop1_0": {
                     "name": "Edge McCPpop0_1 to McCPpop1_0",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -109,7 +132,8 @@
                 "Edge McCPpop0_1 to McCPpop1_1": {
                     "name": "Edge McCPpop0_1 to McCPpop1_1",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -122,7 +146,8 @@
                 "Edge McCPpop0_2 to McCPpop1_0": {
                     "name": "Edge McCPpop0_2 to McCPpop1_0",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -135,7 +160,8 @@
                 "Edge McCPpop0_2 to McCPpop1_1": {
                     "name": "Edge McCPpop0_2 to McCPpop1_1",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -148,7 +174,8 @@
                 "Edge McCPpop0_2 to McCPpop1_2": {
                     "name": "Edge McCPpop0_2 to McCPpop1_2",
                     "type": {
-                        "NeuroML": "rsDL"
+                        "PNL": "MappingProjection",
+                        "generic": null
                     },
                     "parameters": {},
                     "functions": {},
@@ -159,7 +186,15 @@
                     "weight": 0.5301612069115903
                 }
             },
-            "parameters": {}
+            "parameters": {
+                "PNL": {
+                    "required_node_roles": []
+                }
+            },
+            "type": {
+                "PNL": "Composition",
+                "generic": "graph"
+            }
         }
     ]
 }

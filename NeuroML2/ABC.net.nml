@@ -4,7 +4,7 @@
     Generation seed: 1234
     NeuroMLlite parameters: 
         A_initial = 0.11</notes>
-    <include href="PNL.xml"/>
+    <include href="ABC__lems.xml"/>
     <network id="ABC">
         <notes>Example of simplified network</notes>
         <property tag="recommended_dt_ms" value="0.1"/>
