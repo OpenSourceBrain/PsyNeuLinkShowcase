@@ -20,8 +20,8 @@ c = Composition(name='ColorMotion Task')
 c.add_linear_processing_pathway([color_input, decision])
 c.add_linear_processing_pathway([motion_input, decision])
 
-# c.show_graph()
-c.show_graph(show_node_structure=ALL)
+c.show_graph()
+#c.show_graph(show_node_structure=ALL)
 
 stimuli = {color_input: [0,1,0],
               motion_input: [1,0,1]}
@@ -31,5 +31,9 @@ stimuli = {color_input: [0,1,0],
 print (dir(c))
 print('--------')
 print (c.json_summary)
+
+base_fname = __file__.replace('.py', '')
+with open(f'{base_fname}.json', 'w') as outfi:
+    outfi.write(c.json_summary)
 
 

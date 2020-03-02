@@ -1,5 +1,5 @@
-import ABC
 import psyneulink as pnl
+import ABC
 
 ABC = pnl.Composition(name='ABC')
 
