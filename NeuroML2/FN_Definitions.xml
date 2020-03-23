@@ -8,6 +8,7 @@
         <Parameter name="a" dimension="none"/>
         <Parameter name="b" dimension="none"/>
         <Parameter name="phi" dimension="none"/>
+        <Parameter name="Iext" dimension="none"/>
 
         <!-- Initial Conditions -->
         <Parameter name="V0" dimension="none"/>
@@ -36,7 +37,7 @@
 
             <DerivedVariable name="ISyn" dimension="none" select="synapses[*]/I" reduce="add" />
 
-            <TimeDerivative variable="V" value="(F - W + ISyn) / MSEC"/>
+            <TimeDerivative variable="V" value="(F - W + Iext + ISyn) / MSEC"/>
             <TimeDerivative variable="W" value="phi * (V + a - b * W) / MSEC"/>
 
             <OnStart>
@@ -58,6 +59,7 @@
         </Dynamics>
     </ComponentType>
     
+    <fnCell id="fn" a="0.7" b="0.8" phi="0.08" V0="-1" W0="0" Iext="1"/>
     
 
     <ComponentType name="simpleExponentialSynapse"
