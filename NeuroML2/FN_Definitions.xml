@@ -11,8 +11,8 @@
         <Parameter name="Iext" dimension="none"/>
 
         <!-- Initial Conditions -->
-        <Parameter name="V0" dimension="none"/>
-        <Parameter name="W0" dimension="none"/>
+        <Parameter name="initial_v" dimension="none"/>
+        <Parameter name="initial_w" dimension="none"/>
 
         <Constant name="MSEC" dimension="time" value="1ms"/>
        
@@ -41,8 +41,8 @@
             <TimeDerivative variable="W" value="phi * (V + a - b * W) / MSEC"/>
 
             <OnStart>
-                <StateAssignment variable="V" value="V0"/>
-                <StateAssignment variable="W" value="W0"/>
+                <StateAssignment variable="V" value="initial_v"/>
+                <StateAssignment variable="W" value="initial_w"/>
                 <StateAssignment variable="spiking" value="0"/>
             </OnStart>
 
@@ -59,7 +59,7 @@
         </Dynamics>
     </ComponentType>
     
-    <fnCell id="fn" a="0.7" b="0.8" phi="0.08" V0="-1" W0="0" Iext="1"/>
+    <fnCell id="fn" a="0.7" b="0.8" phi="0.08" initial_v="-1" initial_w="0" Iext="1"/>
     
 
     <ComponentType name="simpleExponentialSynapse"

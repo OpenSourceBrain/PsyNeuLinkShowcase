@@ -12,6 +12,12 @@
             "W": {
                 "all": "*"
             }
+        },
+        "plots2D": {
+            "VW": {
+                "x_axis": "FNpop/0/fn/V",
+                "y_axis": "FNpop/0/fn/W"
+            }
         }
     }
 }

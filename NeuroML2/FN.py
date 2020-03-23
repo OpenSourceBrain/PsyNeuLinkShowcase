@@ -18,11 +18,13 @@ def generate():
     net = Network(id='FN')
     net.notes = 'Example of simplified network'
     
-    net.parameters = { 'FN_initial': 0, 'a':0.7}
+    net.parameters = { 'a':0.7,'b':0.8, 'phi':0.08, 'initial_v':-1,'initial_w':0}
 
     cellInput = Cell(id='fn', 
                      lems_source_file='FN_Definitions.xml',
-                     parameters={'a':'a'})
+                     parameters={})
+    for p in net.parameters:
+        cellInput.parameters[p]=p
     net.cells.append(cellInput)
 
 
@@ -51,7 +53,9 @@ def generate():
                      duration=simtime,
                      dt=dt,
                      seed= 123,
-                     recordVariables={'V':{'all':'*'},'W':{'all':'*'}})
+                     recordVariables={'V':{'all':'*'},'W':{'all':'*'}},
+                     plots2D={'VW':{'x_axis':'%s/0/fn/V'%pop.id,
+                                 'y_axis':'%s/0/fn/W'%pop.id}})
 
     sim.to_json_file()
     
