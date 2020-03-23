@@ -1,5 +1,4 @@
 import psyneulink as pnl
-import ABCD
 
 ABCD = pnl.Composition(name='ABCD')
 
@@ -20,5 +19,15 @@ ABCD.add_projection(projection=pnl.MappingProjection(name='Edge A_input_0 to A_0
 ABCD.add_projection(projection=pnl.MappingProjection(name='Edge A_0 to C_0'), sender=A_0, receiver=C_0)
 ABCD.add_projection(projection=pnl.MappingProjection(name='Edge B_0 to D_0'), sender=B_0, receiver=D_0)
 ABCD.add_projection(projection=pnl.MappingProjection(name='Edge C_0 to D_0'), sender=C_0, receiver=D_0)
-
+ABCD.run(inputs={A_input_0: 0}, log=True, num_trials=50)
+        
+print('Finished running model')
+        
+print(ABCD.results)
+for node in ABCD.nodes:
+    print(f'{node} {node.name}: {node.parameters.value.get(ABCD)}')
+    
 ABCD.show_graph()
+        
+print('Done!')
+        

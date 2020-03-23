@@ -10,7 +10,7 @@ import sys
 def generate():
     
     dt = 100 # ms, so 0.1s
-    simtime = 300 # ms, so 50s
+    simtime = 5000 # ms, so 50s
     
     ################################################################################
     ###   Build new network
