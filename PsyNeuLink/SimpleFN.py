@@ -1,10 +1,12 @@
 import psyneulink as pnl
 import sys
 
+time_step_size=0.1
+
 fhn = pnl.FitzHughNagumoIntegrator(
     initial_v=-1,
     initial_w=0,
-    time_step_size=0.1,
+    time_step_size=time_step_size,
 )
 
 
@@ -51,6 +53,12 @@ for i in [0,1]:
     x_values = {node: generate_time_array(node) for node in comp.nodes}
     y_values = {node: generate_value_array(node, i) for node in comp.nodes}
 
+    fout = open('SimpleFN_%i.dat'%i,'w')
+    for index in range(len(x_values[node])):
+        #                                            1000 to convert ms to s
+        fout.write('%s\t%s\n'%(x_values[node][index]*time_step_size/1000.0, \
+                               y_values[node][index]))
+    fout.close()
 
     for node in comp.nodes:
         axes.plot(
