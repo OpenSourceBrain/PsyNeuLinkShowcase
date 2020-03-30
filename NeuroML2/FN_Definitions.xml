@@ -4,15 +4,27 @@
     <ComponentType  name="fnCell"
                     extends="baseCellMembPotDL"
                     description="The Fitzhugh Nagumo model...">
-
-        <Parameter name="a" dimension="none"/>
-        <Parameter name="b" dimension="none"/>
-        <Parameter name="phi" dimension="none"/>
-        <Parameter name="Iext" dimension="none"/>
-
+            
+        <Parameter name="a_v" dimension="none"/>
+        <Parameter name="b_v" dimension="none"/>
+        <Parameter name="c_v" dimension="none"/>
+        <Parameter name="d_v" dimension="none"/>
+        <Parameter name="e_v" dimension="none"/>
+        <Parameter name="f_v" dimension="none"/>
+        <Parameter name="time_constant_v" dimension="none"/>
+        <Parameter name="a_w" dimension="none"/>
+        <Parameter name="b_w" dimension="none"/>
+        <Parameter name="c_w" dimension="none"/>
+        <Parameter name="time_constant_w" dimension="none"/>
+        <Parameter name="threshold" dimension="none"/>
+        <Parameter name="mode" dimension="none"/>
+        <Parameter name="uncorrelated_activity" dimension="none"/>
         <!-- Initial Conditions -->
         <Parameter name="initial_v" dimension="none"/>
         <Parameter name="initial_w" dimension="none"/>
+        
+        <Parameter name="Iext" dimension="none"/>
+
 
         <Constant name="MSEC" dimension="time" value="1ms"/>
        
@@ -20,7 +32,6 @@
 
         <!-- <Exposure name="V" dimension="none"/> --> <!-- Already exposed from baseCellMembPotDL -->
         <Exposure name="W" dimension="none"/>
-        <Exposure name="F" dimension="none"/>
         
         <EventPort name="spike" direction="out" description="Spike event"/>
 
@@ -32,13 +43,11 @@
                            description="W plays the role of a recovery variable"/>
             <StateVariable name="spiking" dimension="none"/>
 
-            <!-- F must be a cubic polynomial in V -->
-            <DerivedVariable name="F" dimension="none" exposure="F" value="V - (V^3 / 3)"/>
 
             <DerivedVariable name="ISyn" dimension="none" select="synapses[*]/I" reduce="add" />
 
-            <TimeDerivative variable="V" value="(F - W + Iext + ISyn) / MSEC"/>
-            <TimeDerivative variable="W" value="phi * (V + a - b * W) / MSEC"/>
+            <TimeDerivative variable="V" value="(a_v * V^3 + (1 + threshold) * b_v * V^2 + (-1 * threshold) * c_v * V + d_v + e_v * W + f_v*Iext + ISyn) / (time_constant_v * MSEC)"/>
+            <TimeDerivative variable="W" value="(mode * a_w * V + b_w * W + c_w + (1 - mode) * uncorrelated_activity) / (time_constant_w * MSEC)"/>
 
             <OnStart>
                 <StateAssignment variable="V" value="initial_v"/>
@@ -59,7 +68,12 @@
         </Dynamics>
     </ComponentType>
     
-    <fnCell id="fn" a="0.7" b="0.8" phi="0.08" initial_v="-1" initial_w="0" Iext="1"/>
+    <fnCell id="fn" initial_w="0.0" initial_v="0.0" a_v="-0.3333333333333333" b_v="0.0" 
+            c_v="1.0" d_v="0.0" e_v="-1.0" f_v="1.0" 
+            time_constant_v="1.0" a_w="1.0" b_w="-0.8" c_w="0.7" 
+            time_constant_w="12.5" threshold="-1.0" 
+            mode="1.0" uncorrelated_activity="0.0"
+            Iext="1" />
     
 
     <ComponentType name="simpleExponentialSynapse"

@@ -18,7 +18,7 @@ def generate():
     net = Network(id='FN')
     net.notes = 'Example of simplified network'
     
-    net.parameters = { 'a':0.7,'b':0.8, 'phi':0.08, 'initial_v':-1,'initial_w':0}
+    net.parameters = { 'initial_w': 0.0, 'initial_v': 0.0, 'a_v': -0.3333333333333333, 'b_v': 0.0, 'c_v': 1.0, 'd_v': 0.0, 'e_v': -1.0, 'f_v': 1.0, 'time_constant_v': 1.0, 'a_w': 1.0, 'b_w': -0.8, 'c_w': 0.7, 'time_constant_w': 12.5, 'threshold': -1.0, 'mode': 1.0, 'uncorrelated_activity': 0.0, 'Iext': 1 }
 
     cellInput = Cell(id='fn', 
                      lems_source_file='FN_Definitions.xml',
