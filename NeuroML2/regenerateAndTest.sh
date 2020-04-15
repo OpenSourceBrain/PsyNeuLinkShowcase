@@ -22,3 +22,4 @@ jnml LEMS_FitzHughNagumo.xml -graph
 
 python FN.py -jnml
 python FN.py -pnl
+python run_pnl_FN.py

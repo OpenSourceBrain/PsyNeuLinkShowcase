@@ -31,3 +31,7 @@
 /NeuroML2/*_nrn.py
 /PsyNeuLink/*.dat
 /PsyNeuLink/clean.sh
+/NeuroML2/FN.bids-mdf.highlevel.json
+/NeuroML2/run_pnl_ABC.py
+/NeuroML2/run_pnl_ABCD.py
+/NeuroML2/run_pnl_McCPNet.py
