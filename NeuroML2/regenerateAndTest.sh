@@ -17,6 +17,8 @@ python McCP.py -pnl
 jnml LEMS_SimMcCPNet.xml -graph
 jnml LEMS_SimMcCPNet.xml -nogui
 
-
 jnml LEMS_FitzHughNagumo.xml -nogui
 jnml LEMS_FitzHughNagumo.xml -graph
+
+python FN.py -jnml
+python FN.py -pnl

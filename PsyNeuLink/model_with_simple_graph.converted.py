@@ -2,9 +2,9 @@ import psyneulink as pnl
 
 comp = pnl.Composition(name='comp')
 
-A = pnl.TransferMechanism(name='A', function=pnl.Linear(intercept=2.0, slope=5.0, default_variable=[[0]]), output_ports=[pnl.RESULTS], termination_comparison_op='<=', termination_measure=pnl.Distance(metric=pnl.MAX_ABS_DIFF))
-B = pnl.TransferMechanism(name='B', function=pnl.Logistic(default_variable=[[0]]), output_ports=[pnl.RESULTS], termination_comparison_op='<=', termination_measure=pnl.Distance(metric=pnl.MAX_ABS_DIFF))
-C = pnl.TransferMechanism(name='C', function=pnl.Exponential(default_variable=[[0]]), output_ports=[pnl.RESULTS], termination_comparison_op='<=', termination_measure=pnl.Distance(metric=pnl.MAX_ABS_DIFF))
+A = pnl.TransferMechanism(name='A', function=pnl.Linear(intercept=2.0, slope=5.0, default_variable=[[0]]), output_ports=[pnl.RESULTS])
+B = pnl.TransferMechanism(name='B', function=pnl.Logistic(default_variable=[[0]]), output_ports=[pnl.RESULTS])
+C = pnl.TransferMechanism(name='C', function=pnl.Exponential(default_variable=[[0]]), output_ports=[pnl.RESULTS])
 
 comp.add_node(A)
 comp.add_node(B)
