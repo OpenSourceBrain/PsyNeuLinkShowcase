@@ -1,11 +1,16 @@
 import psyneulink as pnl
 import sys
 
-time_step_size=0.1
+dt = 0.05
+simtime = 100
+    
+time_step_size=dt
+num_trials=int(simtime/dt)
 
 fhn = pnl.FitzHughNagumoIntegrator(
     initial_v=-1,
     initial_w=0,
+    d_v=1,
     time_step_size=time_step_size,
 )
 
@@ -15,7 +20,7 @@ fn = pnl.IntegratorMechanism(name='fn', function=fhn)
 comp = pnl.Composition(name='comp')
 comp.add_linear_processing_pathway([fn])
 
-comp.run(inputs={fn:1}, log=True, num_trials=1000)
+comp.run(inputs={fn:0}, log=True, num_trials=num_trials)
 
 
 print('Finished running model')
@@ -40,12 +45,12 @@ def generate_time_array(node, context='comp', param='value'):
 
 def generate_value_array(node, index, context='comp', param='value'):
     return [float(entry.value[index]) for entry in getattr(node.parameters, param).log[context]]
-
+'''
 for node in comp.nodes:
     print(f'>> {node}: {generate_time_array(node)}')
     
     for i in [0,1,2]:
-        print(f'>> {node}: {generate_value_array(node,i)}')
+        print(f'>> {node}: {generate_value_array(node,i)}')'''
     
 
 fig, axes = plt.subplots()
@@ -62,11 +67,11 @@ for i in [0,1]:
 
     for node in comp.nodes:
         axes.plot(
-            x_values[node],
+            [t*time_step_size/1000.0 for t in x_values[node]],
             y_values[node],
             label=f'Value of {i} {node.name}, {node.function.__class__.__name__}'
         )
 
-axes.set_xlabel('Trial')
+axes.set_xlabel('Time (s)')
 axes.legend()
 plt.show()

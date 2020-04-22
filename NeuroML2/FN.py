@@ -9,7 +9,7 @@ import sys
 
 def generate():
     
-    dt = 0.1
+    dt = 0.05
     simtime = 100
     
     ################################################################################
@@ -23,7 +23,7 @@ def generate():
                        'a_v': -0.3333333333333333, 
                        'b_v': 0.0, 
                        'c_v': 1.0, 
-                       'd_v': 0.0, 
+                       'd_v': 1, 
                        'e_v': -1.0, 
                        'f_v': 1.0, 
                        'time_constant_v': 1.0, 
@@ -34,7 +34,7 @@ def generate():
                        'threshold': -1.0, 
                        'mode': 1.0, 
                        'uncorrelated_activity': 0.0, 
-                       'Iext': 1 }
+                       'Iext': 0 }
 
     cellInput = Cell(id='fn', 
                      lems_source_file='FN_Definitions.xml',

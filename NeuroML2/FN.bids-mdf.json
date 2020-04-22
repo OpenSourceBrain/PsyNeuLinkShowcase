@@ -49,7 +49,7 @@
                                 "d_v": {
                                     "type": "float",
                                     "source": "FNpop_0.input_ports.d_v",
-                                    "value": 0
+                                    "value": 1
                                 },
                                 "e_v": {
                                     "type": "float",
@@ -104,7 +104,7 @@
                                 "Iext": {
                                     "type": "float",
                                     "source": "FNpop_0.input_ports.Iext",
-                                    "value": 1
+                                    "value": 0
                                 }
                             }
                         }
