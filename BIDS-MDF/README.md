@@ -23,6 +23,13 @@ a way not only for extending the standard to accommodate the specific needs of i
 path toward extending the standard:  recurring extensions that serve similar purposes help identify targets for the
 definition of new components of the core standard itself.
 
+The format is currently under development, and should be considered a prototype for a more complete standard.
+Among the targets for extension are standards for specifying process control flow.  At present, to execute a model
+specified in the format, the environment must either assume that process conrol flow is determined by the structure
+of the graph (i.e., edges are directed, the graph is acyclic, and nodes execute in the order of dependencies), or
+that process control flow is specified in environment-specific entries.  A goal of further development is to provide
+standard ways of expressing both time-based and condition-based specifications for execution timing and order.
+
 Basic Constructs
 ----------------
 
