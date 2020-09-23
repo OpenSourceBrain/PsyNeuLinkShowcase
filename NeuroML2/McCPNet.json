@@ -1,6 +1,6 @@
 {
     "McCPNet": {
-        "version": "NeuroMLlite v0.2.0",
+        "version": "NeuroMLlite v0.2.1",
         "parameters": {
             "amp": 1.5,
             "scale": 3
