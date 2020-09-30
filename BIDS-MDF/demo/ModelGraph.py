@@ -1,10 +1,8 @@
 import collections
 
-__version__ = '0.1.6'
 
 from neuromllite.BaseTypes import Base
 from neuromllite.BaseTypes import BaseWithId
-from neuromllite.BaseTypes import NetworkReader
 
 
 class EvaluableExpression(str):
@@ -18,8 +16,9 @@ class ModelGraph(BaseWithId):
 
     def __init__(self, **kwargs):
         
-        self.allowed_children = collections.OrderedDict([('nodes',('The node definitions...',Node)),
-        ('edges',('The edge definitions...',Edge))])
+        self.allowed_children = collections.OrderedDict([
+                                   ('nodes',('The definition of node ...',Node)),
+                                   ('edges',('The definition of edge...',Edge))])
                                  
         self.allowed_fields = collections.OrderedDict([('parameters',('Dict of global parameters for the network',dict))])
                         
@@ -58,6 +57,7 @@ class InputPort(BaseWithId):
                       
         super(InputPort, self).__init__(**kwargs)
         
+        
 class OutputPort(BaseWithId):
 
     def __init__(self, **kwargs):
@@ -65,6 +65,7 @@ class OutputPort(BaseWithId):
         self.allowed_fields = collections.OrderedDict([('value',('...',str))])
                       
         super(OutputPort, self).__init__(**kwargs)
+        
         
 class Edge(BaseWithId):
 
@@ -84,7 +85,7 @@ if __name__ == "__main__":
     mod_graph0.nodes.append(node)
         
     print(mod_graph0)
-
+    print('------------------')
     print(mod_graph0.to_json())
     print('==================')
     
@@ -113,10 +114,8 @@ if __name__ == "__main__":
     e1 = Edge(id="inp",sender=input_node.id)
     mod_graph.edges.append(e1)
     
-    
-    
-        
     print(mod_graph)
 
+    print('------------------')
     print(mod_graph.to_json())
     new_file = mod_graph.to_json_file('ModelGraph.json')

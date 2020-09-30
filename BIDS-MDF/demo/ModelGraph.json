@@ -7,7 +7,7 @@
                         "input": 0.0
                     }
                 }
-            }, 
+            },
             {
                 "decision_node": {
                     "functions": [
@@ -18,44 +18,44 @@
                         }
                     ]
                 }
-            }, 
+            },
             {
                 "processing_node": {
                     "parameters": {
-                        "slope": 31, 
-                        "logistic_gain": 3
-                    }, 
+                        "logistic_gain": 3,
+                        "slope": 31
+                    },
                     "input_ports": [
                         {
                             "input_1": {
                                 "shape": "(1,)"
                             }
-                        }, 
+                        },
                         {
                             "logistic_gain": {
                                 "shape": "(1,)"
                             }
                         }
-                    ], 
+                    ],
                     "functions": [
                         {
                             "logistic_1": {
-                                "function": "logistic", 
+                                "function": "logistic",
                                 "args": {
-                                    "variable1": "input_1", 
+                                    "variable1": "input_1",
                                     "gain": "logistic_gain"
                                 }
                             }
-                        }, 
+                        },
                         {
                             "linear_1": {
-                                "function": "linear", 
+                                "function": "linear",
                                 "args": {
                                     "slope": "slope"
                                 }
                             }
                         }
-                    ], 
+                    ],
                     "output_ports": [
                         {
                             "output_1": {
@@ -65,7 +65,7 @@
                     ]
                 }
             }
-        ], 
+        ],
         "edges": [
             {
                 "inp": {
