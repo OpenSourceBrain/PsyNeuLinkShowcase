@@ -7,12 +7,12 @@
     <pulseGeneratorDL id="i1" delay="100ms" duration="200ms" amplitude="1" />
     
     <!-- define a synapse model to use for the connection -->
-    <simpleExponentialSynapse id="syn1" Gbase=".1" erev="0" tauDecay="5ms"/>
+    <simpleExponentialSynapse id="syn1" Gbase=".1" erev="0" tauDecay="15ms"/>
 
 
     <network id="net1">
-        <population id="fnPop1" component="fn" size="1" />
-        <population id="fnPop2" component="fn" size="1" />
+        <population id="fnPop1" component="fn0" size="1" />
+        <population id="fnPop2" component="fn0" size="1" />
        
         
         <projection id="projection1" presynapticPopulation="fnPop1" postsynapticPopulation="fnPop2" synapse="syn1">

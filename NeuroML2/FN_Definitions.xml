@@ -68,6 +68,14 @@
         </Dynamics>
     </ComponentType>
     
+    <!-- No "external" input, d=0 (so silent by default...)... -->
+    <fnCell id="fn0" initial_w="-0.62" initial_v="-1.2" a_v="-0.3333333333333333" b_v="0.0" 
+            c_v="1.0" d_v="0" e_v="-1.0" f_v="1.0" 
+            time_constant_v="1.0" a_w="1.0" b_w="-0.8" c_w="0.7" 
+            time_constant_w="12.5" threshold="-1.0" 
+            mode="1.0" uncorrelated_activity="0.0"
+            Iext="0" />
+    
     <fnCell id="fn" initial_w="0.0" initial_v="-1" a_v="-0.3333333333333333" b_v="0.0" 
             c_v="1.0" d_v="1" e_v="-1.0" f_v="1.0" 
             time_constant_v="1.0" a_w="1.0" b_w="-0.8" c_w="0.7" 
