@@ -3,27 +3,34 @@
         {
             "controller": null,
             "edges": {
-                "MappingProjection from A[RESULTS] to B[InputPort-0]": {
+                "MappingProjection from A[RESULT] to B[InputPort-0]": {
                     "functions": [
                         {
                             "args": {
                                 "PNL": {
+                                    "enable_output_type_conversion": false,
                                     "execution_count": 0,
                                     "has_initializers": false,
+                                    "output_type": 3,
                                     "variable": [
                                         2.0
                                     ]
                                 },
                                 "bounds": null,
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
                                 "matrix": {
-                                    "source": "MappingProjection from A[RESULTS] to B[InputPort-0].input_ports.matrix",
+                                    "source": "MappingProjection from A[RESULT] to B[InputPort-0].input_ports.matrix",
                                     "type": "numpy.array",
                                     "value": [
                                         [
                                             1.0
                                         ]
                                     ]
-                                }
+                                },
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0
                             },
                             "name": "LinearMatrix Function-0",
                             "type": {
@@ -32,53 +39,57 @@
                             }
                         }
                     ],
-                    "name": "MappingProjection from A[RESULTS] to B[InputPort-0]",
+                    "name": "MappingProjection from A[RESULT] to B[InputPort-0]",
                     "parameters": {
                         "PNL": {
                             "execution_count": 0,
-                            "has_initializers": false,
-                            "variable": [
-                                2.0
-                            ]
+                            "has_initializers": false
                         },
+                        "execute_until_finished": true,
                         "exponent": null,
-                        "matrix": [
-                            [
-                                1.0
-                            ]
-                        ],
+                        "is_finished_flag": true,
+                        "max_executions_before_finished": 1000,
+                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                        "num_executions_before_finished": 0,
                         "weight": null
                     },
                     "receiver": "B",
                     "receiver_port": "InputPort-0",
                     "sender": "A",
-                    "sender_port": "RESULTS",
+                    "sender_port": "RESULT",
                     "type": {
                         "PNL": "MappingProjection",
                         "generic": null
                     }
                 },
-                "MappingProjection from A[RESULTS] to C[InputPort-0]": {
+                "MappingProjection from A[RESULT] to C[InputPort-0]": {
                     "functions": [
                         {
                             "args": {
                                 "PNL": {
+                                    "enable_output_type_conversion": false,
                                     "execution_count": 0,
                                     "has_initializers": false,
+                                    "output_type": 3,
                                     "variable": [
                                         2.0
                                     ]
                                 },
                                 "bounds": null,
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
                                 "matrix": {
-                                    "source": "MappingProjection from A[RESULTS] to C[InputPort-0].input_ports.matrix",
+                                    "source": "MappingProjection from A[RESULT] to C[InputPort-0].input_ports.matrix",
                                     "type": "numpy.array",
                                     "value": [
                                         [
                                             1.0
                                         ]
                                     ]
-                                }
+                                },
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0
                             },
                             "name": "LinearMatrix Function-1",
                             "type": {
@@ -87,27 +98,24 @@
                             }
                         }
                     ],
-                    "name": "MappingProjection from A[RESULTS] to C[InputPort-0]",
+                    "name": "MappingProjection from A[RESULT] to C[InputPort-0]",
                     "parameters": {
                         "PNL": {
                             "execution_count": 0,
-                            "has_initializers": false,
-                            "variable": [
-                                2.0
-                            ]
+                            "has_initializers": false
                         },
+                        "execute_until_finished": true,
                         "exponent": null,
-                        "matrix": [
-                            [
-                                1.0
-                            ]
-                        ],
+                        "is_finished_flag": true,
+                        "max_executions_before_finished": 1000,
+                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                        "num_executions_before_finished": 0,
                         "weight": null
                     },
                     "receiver": "C",
                     "receiver_port": "InputPort-0",
                     "sender": "A",
-                    "sender_port": "RESULTS",
+                    "sender_port": "RESULT",
                     "type": {
                         "PNL": "MappingProjection",
                         "generic": null
@@ -121,8 +129,10 @@
                         {
                             "args": {
                                 "PNL": {
+                                    "enable_output_type_conversion": false,
                                     "execution_count": 0,
                                     "has_initializers": false,
+                                    "output_type": 3,
                                     "variable": [
                                         [
                                             0
@@ -130,18 +140,23 @@
                                     ]
                                 },
                                 "bounds": null,
+                                "execute_until_finished": true,
                                 "intercept": {
                                     "source": "A.input_ports.intercept",
                                     "type": "float",
                                     "value": 2.0
                                 },
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
                                 "slope": {
                                     "source": "A.input_ports.slope",
                                     "type": "float",
                                     "value": 5.0
                                 }
                             },
-                            "name": "Linear Function-9",
+                            "name": "Linear Function-7",
                             "type": {
                                 "generic": "Linear"
                             }
@@ -154,13 +169,20 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0
                                             ]
                                         },
+                                        "execute_until_finished": true,
                                         "exponents": null,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "offset": 0.0,
                                         "operation": "sum",
                                         "scale": 1.0,
@@ -186,7 +208,13 @@
                                     ]
                                 },
                                 "combine": null,
+                                "execute_until_finished": true,
                                 "exponent": null,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null,
                                 "weight": null
                             },
                             "shape": "(1,)",
@@ -201,53 +229,21 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
-                                            "variable": [
-                                                0.01
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-10",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "convergence_criterion",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.01
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 2.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
                                     "name": "Linear Function-11",
@@ -265,7 +261,13 @@
                                     "variable": [
                                         2.0
                                     ]
-                                }
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -279,92 +281,21 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
-                                            "variable": [
-                                                5.0
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-12",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "slope",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        5.0
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                0.5
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-13",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "integration_rate",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.5
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
                                     "name": "Linear Function-14",
@@ -382,7 +313,169 @@
                                     "variable": [
                                         0.0
                                     ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-13",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
                                 }
+                            ],
+                            "name": "offset",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.5
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-12",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "rate",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.5
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                5.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-10",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "slope",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        5.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -399,23 +492,30 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 2.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
-                                    "name": "Linear Function-18",
+                                    "name": "Linear Function-17",
                                     "type": {
                                         "generic": "Linear"
                                     }
                                 }
                             ],
-                            "name": "RESULTS",
+                            "name": "RESULT",
                             "parameters": {
                                 "PNL": {
                                     "execution_count": 0,
@@ -424,7 +524,13 @@
                                     "variable": [
                                         2.0
                                     ]
-                                }
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -437,12 +543,9 @@
                         "PNL": {
                             "execution_count": 0,
                             "has_initializers": false,
+                            "input_labels_dict": {},
                             "input_port_variables": null,
-                            "input_ports_spec": null,
-                            "output_ports_spec": [
-                                "RESULTS"
-                            ],
-                            "previous_value": null,
+                            "output_labels_dict": {},
                             "variable": [
                                 [
                                     0
@@ -450,21 +553,66 @@
                             ]
                         },
                         "clip": null,
-                        "convergence_criterion": 0.01,
-                        "convergence_function": "psyneulink.core.components.functions.objectivefunctions.Distance",
+                        "execute_until_finished": true,
                         "has_integrated": false,
-                        "initial_value": null,
-                        "integration_rate": 0.5,
-                        "integrator_function": "psyneulink.core.components.functions.statefulfunctions.integratorfunctions.AdaptiveIntegrator",
+                        "initial_value": [
+                            [
+                                0
+                            ]
+                        ],
+                        "input_ports": null,
+                        "integrator_function": "AdaptiveIntegrator",
                         "integrator_function_value": [
                             [
                                 0
                             ]
                         ],
                         "integrator_mode": false,
-                        "max_passes": 1000,
-                        "noise": 0.0,
-                        "on_resume_integrator_mode": "instantaneous_mode_value"
+                        "is_finished_flag": true,
+                        "max_executions_before_finished": 1000,
+                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                        "num_executions_before_finished": 0,
+                        "on_resume_integrator_mode": "instantaneous_mode_value",
+                        "output_ports": [
+                            "RESULTS"
+                        ],
+                        "termination_comparison_op": "<=",
+                        "termination_measure": {
+                            "args": {
+                                "PNL": {
+                                    "enable_output_type_conversion": false,
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "output_type": 3,
+                                    "variable": [
+                                        [
+                                            [
+                                                0
+                                            ]
+                                        ],
+                                        [
+                                            [
+                                                0
+                                            ]
+                                        ]
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "metric": "max_abs_diff",
+                                "normalize": false,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0
+                            },
+                            "name": "Distance Function-4",
+                            "type": {
+                                "PNL": "Distance",
+                                "generic": null
+                            }
+                        },
+                        "termination_measure_value": 0.0,
+                        "termination_threshold": null
                     },
                     "type": {
                         "PNL": "TransferMechanism",
@@ -476,8 +624,10 @@
                         {
                             "args": {
                                 "PNL": {
+                                    "enable_output_type_conversion": false,
                                     "execution_count": 0,
                                     "has_initializers": false,
+                                    "output_type": 3,
                                     "variable": [
                                         [
                                             0
@@ -490,16 +640,17 @@
                                     "value": 0.0
                                 },
                                 "bounds": null,
+                                "execute_until_finished": true,
                                 "gain": {
                                     "source": "B.input_ports.gain",
                                     "type": "float",
                                     "value": 1.0
                                 },
-                                "offset": {
-                                    "source": "B.input_ports.offset",
-                                    "type": "float",
-                                    "value": 0.0
-                                },
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "offset": 0.0,
                                 "scale": {
                                     "source": "B.input_ports.scale",
                                     "type": "float",
@@ -511,7 +662,7 @@
                                     "value": 0.0
                                 }
                             },
-                            "name": "Logistic Function-2",
+                            "name": "Logistic Function-0",
                             "type": {
                                 "generic": "Logistic"
                             }
@@ -524,19 +675,26 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0
                                             ]
                                         },
+                                        "execute_until_finished": true,
                                         "exponents": null,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "offset": 0.0,
                                         "operation": "sum",
                                         "scale": 1.0,
                                         "weights": null
                                     },
-                                    "name": "LinearCombination Function-18",
+                                    "name": "LinearCombination Function-19",
                                     "type": {
                                         "PNL": "LinearCombination",
                                         "generic": null
@@ -556,7 +714,13 @@
                                     ]
                                 },
                                 "combine": null,
+                                "execute_until_finished": true,
                                 "exponent": null,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null,
                                 "weight": null
                             },
                             "shape": "(1,)",
@@ -571,56 +735,24 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
-                                            "variable": [
-                                                0.01
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-19",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "convergence_criterion",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.01
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
-                                    "name": "Linear Function-20",
+                                    "name": "Linear Function-19",
                                     "type": {
                                         "generic": "Linear"
                                     }
@@ -635,7 +767,13 @@
                                     "variable": [
                                         0.0
                                     ]
-                                }
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -649,17 +787,24 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 1.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
-                                    "name": "Linear Function-21",
+                                    "name": "Linear Function-20",
                                     "type": {
                                         "generic": "Linear"
                                     }
@@ -674,7 +819,13 @@
                                     "variable": [
                                         1.0
                                     ]
-                                }
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -688,173 +839,24 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-22",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "offset",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.0
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                1.0
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-23",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "scale",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        1.0
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                0.0
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-24",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "x_0",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.0
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                0.5
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
                                     "name": "Linear Function-25",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "integration_rate",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.5
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                0.0
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-26",
                                     "type": {
                                         "generic": "Linear"
                                     }
@@ -869,7 +871,273 @@
                                     "variable": [
                                         0.0
                                     ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-23",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
                                 }
+                            ],
+                            "name": "offset-function",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-22",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "offset-integrator_function",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.5
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-24",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "rate",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.5
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                1.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-18",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "scale",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        1.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-21",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "x_0",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -886,23 +1154,30 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0.5
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
-                                    "name": "Linear Function-30",
+                                    "name": "Linear Function-28",
                                     "type": {
                                         "generic": "Linear"
                                     }
                                 }
                             ],
-                            "name": "RESULTS",
+                            "name": "RESULT",
                             "parameters": {
                                 "PNL": {
                                     "execution_count": 0,
@@ -911,7 +1186,13 @@
                                     "variable": [
                                         0.5
                                     ]
-                                }
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -924,12 +1205,9 @@
                         "PNL": {
                             "execution_count": 0,
                             "has_initializers": false,
+                            "input_labels_dict": {},
                             "input_port_variables": null,
-                            "input_ports_spec": null,
-                            "output_ports_spec": [
-                                "RESULTS"
-                            ],
-                            "previous_value": null,
+                            "output_labels_dict": {},
                             "variable": [
                                 [
                                     0
@@ -937,21 +1215,66 @@
                             ]
                         },
                         "clip": null,
-                        "convergence_criterion": 0.01,
-                        "convergence_function": "psyneulink.core.components.functions.objectivefunctions.Distance",
+                        "execute_until_finished": true,
                         "has_integrated": false,
-                        "initial_value": null,
-                        "integration_rate": 0.5,
-                        "integrator_function": "psyneulink.core.components.functions.statefulfunctions.integratorfunctions.AdaptiveIntegrator",
+                        "initial_value": [
+                            [
+                                0
+                            ]
+                        ],
+                        "input_ports": null,
+                        "integrator_function": "AdaptiveIntegrator",
                         "integrator_function_value": [
                             [
                                 0
                             ]
                         ],
                         "integrator_mode": false,
-                        "max_passes": 1000,
-                        "noise": 0.0,
-                        "on_resume_integrator_mode": "instantaneous_mode_value"
+                        "is_finished_flag": true,
+                        "max_executions_before_finished": 1000,
+                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                        "num_executions_before_finished": 0,
+                        "on_resume_integrator_mode": "instantaneous_mode_value",
+                        "output_ports": [
+                            "RESULTS"
+                        ],
+                        "termination_comparison_op": "<=",
+                        "termination_measure": {
+                            "args": {
+                                "PNL": {
+                                    "enable_output_type_conversion": false,
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "output_type": 3,
+                                    "variable": [
+                                        [
+                                            [
+                                                0
+                                            ]
+                                        ],
+                                        [
+                                            [
+                                                0
+                                            ]
+                                        ]
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "metric": "max_abs_diff",
+                                "normalize": false,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0
+                            },
+                            "name": "Distance Function-6",
+                            "type": {
+                                "PNL": "Distance",
+                                "generic": null
+                            }
+                        },
+                        "termination_measure_value": 0.0,
+                        "termination_threshold": null
                     },
                     "type": {
                         "PNL": "TransferMechanism",
@@ -963,8 +1286,10 @@
                         {
                             "args": {
                                 "PNL": {
+                                    "enable_output_type_conversion": false,
                                     "execution_count": 0,
                                     "has_initializers": false,
+                                    "output_type": 3,
                                     "variable": [
                                         [
                                             0
@@ -977,23 +1302,20 @@
                                     "value": 0.0
                                 },
                                 "bounds": null,
-                                "offset": {
-                                    "source": "C.input_ports.offset",
-                                    "type": "float",
-                                    "value": 0.0
-                                },
-                                "rate": {
-                                    "source": "C.input_ports.rate",
-                                    "type": "float",
-                                    "value": 1.0
-                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "offset": 0.0,
+                                "rate": 1.0,
                                 "scale": {
                                     "source": "C.input_ports.scale",
                                     "type": "float",
                                     "value": 1.0
                                 }
                             },
-                            "name": "Exponential Function-1",
+                            "name": "Exponential Function-0",
                             "type": {
                                 "PNL": "Exponential",
                                 "generic": null
@@ -1007,19 +1329,26 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0
                                             ]
                                         },
+                                        "execute_until_finished": true,
                                         "exponents": null,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "offset": 0.0,
                                         "operation": "sum",
                                         "scale": 1.0,
                                         "weights": null
                                     },
-                                    "name": "LinearCombination Function-20",
+                                    "name": "LinearCombination Function-22",
                                     "type": {
                                         "PNL": "LinearCombination",
                                         "generic": null
@@ -1039,7 +1368,13 @@
                                     ]
                                 },
                                 "combine": null,
+                                "execute_until_finished": true,
                                 "exponent": null,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null,
                                 "weight": null
                             },
                             "shape": "(1,)",
@@ -1054,53 +1389,21 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
-                                            "variable": [
-                                                0.01
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-31",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "convergence_criterion",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.01
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
                                     "name": "Linear Function-32",
@@ -1118,7 +1421,13 @@
                                     "variable": [
                                         0.0
                                     ]
-                                }
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -1132,173 +1441,24 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 0.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-33",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "offset",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.0
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                1.0
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-34",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "rate",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        1.0
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                1.0
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
                                     "name": "Linear Function-35",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "scale",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        1.0
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                0.5
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-36",
-                                    "type": {
-                                        "generic": "Linear"
-                                    }
-                                }
-                            ],
-                            "name": "integration_rate",
-                            "parameters": {
-                                "PNL": {
-                                    "execution_count": 0,
-                                    "has_initializers": false,
-                                    "require_projection_in_composition": true,
-                                    "variable": [
-                                        0.5
-                                    ]
-                                }
-                            },
-                            "shape": "(1,)",
-                            "type": {
-                                "PNL": "ParameterPort",
-                                "generic": null
-                            }
-                        },
-                        {
-                            "dtype": "float64",
-                            "functions": [
-                                {
-                                    "args": {
-                                        "PNL": {
-                                            "execution_count": 0,
-                                            "has_initializers": false,
-                                            "variable": [
-                                                0.0
-                                            ]
-                                        },
-                                        "bounds": null,
-                                        "intercept": 0.0,
-                                        "slope": 1.0
-                                    },
-                                    "name": "Linear Function-37",
                                     "type": {
                                         "generic": "Linear"
                                     }
@@ -1313,7 +1473,273 @@
                                     "variable": [
                                         0.0
                                     ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-34",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
                                 }
+                            ],
+                            "name": "offset-function",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-33",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "offset-integrator_function",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                1.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-31",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "rate-function",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        1.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                0.5
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-30",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "rate-integrator_function",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        0.5
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
+                            },
+                            "shape": "(1,)",
+                            "type": {
+                                "PNL": "ParameterPort",
+                                "generic": null
+                            }
+                        },
+                        {
+                            "dtype": "float64",
+                            "functions": [
+                                {
+                                    "args": {
+                                        "PNL": {
+                                            "enable_output_type_conversion": false,
+                                            "execution_count": 0,
+                                            "has_initializers": false,
+                                            "output_type": 3,
+                                            "variable": [
+                                                1.0
+                                            ]
+                                        },
+                                        "bounds": null,
+                                        "execute_until_finished": true,
+                                        "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
+                                        "slope": 1.0
+                                    },
+                                    "name": "Linear Function-29",
+                                    "type": {
+                                        "generic": "Linear"
+                                    }
+                                }
+                            ],
+                            "name": "scale",
+                            "parameters": {
+                                "PNL": {
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "require_projection_in_composition": true,
+                                    "variable": [
+                                        1.0
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -1330,23 +1756,30 @@
                                 {
                                     "args": {
                                         "PNL": {
+                                            "enable_output_type_conversion": false,
                                             "execution_count": 0,
                                             "has_initializers": false,
+                                            "output_type": 3,
                                             "variable": [
                                                 1.0
                                             ]
                                         },
                                         "bounds": null,
+                                        "execute_until_finished": true,
                                         "intercept": 0.0,
+                                        "is_finished_flag": true,
+                                        "max_executions_before_finished": 1000,
+                                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                        "num_executions_before_finished": 0,
                                         "slope": 1.0
                                     },
-                                    "name": "Linear Function-41",
+                                    "name": "Linear Function-38",
                                     "type": {
                                         "generic": "Linear"
                                     }
                                 }
                             ],
-                            "name": "RESULTS",
+                            "name": "RESULT",
                             "parameters": {
                                 "PNL": {
                                     "execution_count": 0,
@@ -1355,7 +1788,13 @@
                                     "variable": [
                                         1.0
                                     ]
-                                }
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0,
+                                "projections": null
                             },
                             "shape": "(1,)",
                             "type": {
@@ -1368,12 +1807,9 @@
                         "PNL": {
                             "execution_count": 0,
                             "has_initializers": false,
+                            "input_labels_dict": {},
                             "input_port_variables": null,
-                            "input_ports_spec": null,
-                            "output_ports_spec": [
-                                "RESULTS"
-                            ],
-                            "previous_value": null,
+                            "output_labels_dict": {},
                             "variable": [
                                 [
                                     0
@@ -1381,21 +1817,66 @@
                             ]
                         },
                         "clip": null,
-                        "convergence_criterion": 0.01,
-                        "convergence_function": "psyneulink.core.components.functions.objectivefunctions.Distance",
+                        "execute_until_finished": true,
                         "has_integrated": false,
-                        "initial_value": null,
-                        "integration_rate": 0.5,
-                        "integrator_function": "psyneulink.core.components.functions.statefulfunctions.integratorfunctions.AdaptiveIntegrator",
+                        "initial_value": [
+                            [
+                                0
+                            ]
+                        ],
+                        "input_ports": null,
+                        "integrator_function": "AdaptiveIntegrator",
                         "integrator_function_value": [
                             [
                                 0
                             ]
                         ],
                         "integrator_mode": false,
-                        "max_passes": 1000,
-                        "noise": 0.0,
-                        "on_resume_integrator_mode": "instantaneous_mode_value"
+                        "is_finished_flag": true,
+                        "max_executions_before_finished": 1000,
+                        "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                        "num_executions_before_finished": 0,
+                        "on_resume_integrator_mode": "instantaneous_mode_value",
+                        "output_ports": [
+                            "RESULTS"
+                        ],
+                        "termination_comparison_op": "<=",
+                        "termination_measure": {
+                            "args": {
+                                "PNL": {
+                                    "enable_output_type_conversion": false,
+                                    "execution_count": 0,
+                                    "has_initializers": false,
+                                    "output_type": 3,
+                                    "variable": [
+                                        [
+                                            [
+                                                0
+                                            ]
+                                        ],
+                                        [
+                                            [
+                                                0
+                                            ]
+                                        ]
+                                    ]
+                                },
+                                "execute_until_finished": true,
+                                "is_finished_flag": true,
+                                "max_executions_before_finished": 1000,
+                                "metric": "max_abs_diff",
+                                "normalize": false,
+                                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                                "num_executions_before_finished": 0
+                            },
+                            "name": "Distance Function-8",
+                            "type": {
+                                "PNL": "Distance",
+                                "generic": null
+                            }
+                        },
+                        "termination_measure_value": 0.0,
+                        "termination_threshold": null
                     },
                     "type": {
                         "PNL": "TransferMechanism",
@@ -1407,6 +1888,7 @@
                 "PNL": {
                     "execution_count": 0,
                     "has_initializers": false,
+                    "input_specification": null,
                     "node_ordering": [
                         "A",
                         "B",
@@ -1465,6 +1947,11 @@
                         0
                     ]
                 },
+                "execute_until_finished": true,
+                "is_finished_flag": true,
+                "max_executions_before_finished": 1000,
+                "num_executions": "Time(life=0, pass_=0, run=0, time_step=0, trial=0)",
+                "num_executions_before_finished": 0,
                 "retain_old_simulation_data": false
             },
             "type": {

@@ -14,6 +14,7 @@ fhn = pnl.FitzHughNagumoIntegrator(
     time_step_size=time_step_size,
 )
 
+print('Running simple model of FitzHugh Nagumo cell for %sms: %s'%(simtime, fhn))
 
 fn = pnl.IntegratorMechanism(name='fn', function=fhn)
 
