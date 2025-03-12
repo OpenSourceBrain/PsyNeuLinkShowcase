@@ -34,8 +34,8 @@ def standard_projection(pre, post, syn, weight):
 net = Network(id='BioCog')
 net.notes = 'A simple network'
 
-net.parameters = { 'wee':      10,
-                   'wei':      12,
+net.parameters = { 'wee':      1.0,
+                   'wei':      1.0,
                    'wie':      -8,
                    'wii':      -3}  
 
@@ -106,21 +106,21 @@ inh_syn = Synapse(id='rsInh', lems_source_file='RateBased.xml')
 net.synapses.append(exc_syn)
 net.synapses.append(inh_syn)
 
-standard_projection(pc_pop, fc_pop, exc_syn.id, 10)
-standard_projection(pc_pop, go_pop, exc_syn.id, 10)
-standard_projection(pc_pop, nogo_pop, exc_syn.id, 10)
-standard_projection(fc_pop, pc_pop, exc_syn.id, 10)
-standard_projection(fc_pop, go_pop, exc_syn.id, 10)
-standard_projection(fc_pop, nogo_pop, exc_syn.id, 10)
+standard_projection(pc_pop, fc_pop, exc_syn.id, 1)
+standard_projection(pc_pop, go_pop, exc_syn.id, 1)
+standard_projection(pc_pop, nogo_pop, exc_syn.id, 1)
+standard_projection(fc_pop, pc_pop, exc_syn.id, 1)
+standard_projection(fc_pop, go_pop, exc_syn.id, 1)
+standard_projection(fc_pop, nogo_pop, exc_syn.id, 1)
 
-standard_projection(thalamus_pop, nogo_pop, exc_syn.id, 10)
-standard_projection(thalamus_pop, fc_pop, exc_syn.id, 10)
-standard_projection(fc_pop, thalamus_pop, exc_syn.id, 10)
+standard_projection(thalamus_pop, nogo_pop, exc_syn.id, 1)
+standard_projection(thalamus_pop, fc_pop, exc_syn.id, 1)
+standard_projection(fc_pop, thalamus_pop, exc_syn.id, 1)
 
-standard_projection(nogo_pop, gpe_pop, inh_syn.id, -10)
-standard_projection(gpe_pop, snr_pop, inh_syn.id, -10)
-standard_projection(go_pop, snr_pop, inh_syn.id, -10)
-standard_projection(snr_pop, thalamus_pop, inh_syn.id, -10)
+standard_projection(nogo_pop, gpe_pop, inh_syn.id, -1)
+standard_projection(gpe_pop, snr_pop, inh_syn.id, -1)
+standard_projection(go_pop, snr_pop, inh_syn.id, -1)
+standard_projection(snr_pop, thalamus_pop, inh_syn.id, -1)
 
 
 # Add offset inputs
