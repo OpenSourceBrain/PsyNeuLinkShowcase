@@ -55,14 +55,14 @@ net.cells.append(inh_cell)
 pc_pop = Population(id='PC', 
                      size=1, 
                      component=exc_cell.id, 
-                     properties={'color': '.92 .92 .92','radius':10},
+                     properties={'color': '.0 .92 .92','radius':10},
                      relative_layout = RelativeLayout(region=r0.id,x=-20,y=0,z=0))
 net.populations.append(pc_pop)
 
 fc_pop = Population(id='FC', 
                      size=1, 
                      component=exc_cell.id, 
-                     properties={'color': '.92 .92 .92','radius':10},
+                     properties={'color': '.92 .0 .92','radius':10},
                      relative_layout = RelativeLayout(region=r1.id,x=-20,y=0,z=0))
 net.populations.append(fc_pop)
 
@@ -75,7 +75,7 @@ go_pop = Population(id='Go',
 nogo_pop = Population(id='NoGo', 
                      size=1, 
                      component=inh_cell.id, 
-                     properties={'color': '1 1 0.4','radius':10},
+                     properties={'color': '0 1 0.4','radius':10},
                      relative_layout = RelativeLayout(region=r2.id,x=20,y=0,z=0))
 
 net.populations.append(go_pop)
@@ -84,13 +84,13 @@ net.populations.append(nogo_pop)
 thalamus_pop = Population(id='Thalamus', 
                      size=1, 
                      component=exc_cell.id, 
-                     properties={'color': '.92 .92 .92','radius':10})
+                     properties={'color': '.92 .92 0','radius':10})
 net.populations.append(thalamus_pop)
 
 gpe_pop = Population(id='GPe', 
                      size=1, 
                      component=exc_cell.id, 
-                     properties={'color': '.92 .92 .92','radius':10})
+                     properties={'color': '.5 .5 .92','radius':10})
 net.populations.append(gpe_pop)
 
 snr_pop = Population(id='SNr', 
@@ -157,7 +157,7 @@ sim = Simulation(id='Sim%s'%net.id,
                                     duration='100',
                                     dt='0.005',
                                     network=new_file,
-                                    recordRates={'all':'*'})
+                                    record_rates={'all':'*'})
                                     
 sim.to_json_file('Sim%s.nmllite.json'%net.id)
 
